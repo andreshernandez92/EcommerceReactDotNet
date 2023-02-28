@@ -8,7 +8,8 @@ namespace API.Data
 {
     public static class DbInitializer
     {
-        public static void Initialize(StoreContext context){
+        public static void Initialize(StoreContext context)
+        {
             if(context.Products.Any()) return;
             var products = new List<Product>{
 new Product{Name = "Animal Print Furry Hair Band (Various Colours)" , Description ="It doesn't need pointing out that this fur is faux, partly because the only creature that would prod",Price =3.95 ,PictureUrl ="http://cdn.shopify.com/s/files/1/0028/4062/products/600_DB187_Hair_Band_Silver_Leopard_PrintPS.jpg?1257429506" ,Brand ="Docblack" ,Type ="Accessories" ,QuantityStock =1 },
@@ -48,6 +49,13 @@ new Product{Name = "Black Hairy Skull with Eye-Patch T-Shirt" , Description ="Ve
 new Product{Name = "Black Pointing Grim Reaper T-Shirt" , Description ="I'm guessing no-one's going to volunteer to be the one to tell the Grim Reaper that it's rude to poi",Price =11.99 ,PictureUrl ="http://cdn.shopify.com/s/files/1/0028/4062/products/pointing_reaper_front_full.jpg?1257429506" ,Brand ="Docblack" ,Type ="T-shirts" ,QuantityStock =3 },
 new Product{Name = "Black Ribcage made of Skulls T-Shirt" , Description ="Wouldn't it be weird if this was what our ribcages looked underneath it all? I suppose there are wor",Price =11.99 ,PictureUrl ="http://cdn.shopify.com/s/files/1/0028/4062/products/ribcage_front_full_1.jpg?1257429506" ,Brand ="Docblack" ,Type ="T-shirts" ,QuantityStock =4 }
             };
-        }
-    }
+    foreach (var product in products){
+    context.Products.Add(product);
 }
+context.SaveChanges();
+        }
+    
+    }
+
+};
+
