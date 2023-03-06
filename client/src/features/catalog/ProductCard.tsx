@@ -1,5 +1,9 @@
 import {  Avatar, Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
 import CardHeader from "@mui/material/CardHeader/CardHeader";
+<<<<<<< HEAD
+=======
+import { Link } from "react-router-dom";
+>>>>>>> 657de76ca01cb251d3a4559f6ac364755eb6159e
 import { Product } from "../../app/models/product";
 interface Props {
     product: Product;
@@ -34,7 +38,11 @@ return(
       </CardContent>
       <CardActions>
         <Button size="small">Add to Cart</Button>
+<<<<<<< HEAD
         <Button size="small">View</Button>
+=======
+        <Button component={Link} to={`/catalog/${product.id}`} size="small">View</Button>
+>>>>>>> 657de76ca01cb251d3a4559f6ac364755eb6159e
       </CardActions>
     </Card>
 

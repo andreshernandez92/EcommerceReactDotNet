@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Yeyian PC\\Documents\\Home Proyects\\EcommerceReactDotNet\\API\\API.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\Yeyian PC\\Documents\\Home Proyects\\EcommerceReactDotNet\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Yeyian PC\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Yeyian PC\\Documents\\Home Proyects\\EcommerceReactDotNet\\API\\obj\\",
+=======
+    "C:\\Users\\Yeyian PC\\Documents\\Home Proyects\\EcommerceReactDotNet\\api\\API.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Yeyian PC\\Documents\\Home Proyects\\EcommerceReactDotNet\\api\\API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Yeyian PC\\Documents\\Home Proyects\\EcommerceReactDotNet\\api\\API.csproj",
+        "projectName": "API",
+        "projectPath": "C:\\Users\\Yeyian PC\\Documents\\Home Proyects\\EcommerceReactDotNet\\api\\API.csproj",
+        "packagesPath": "C:\\Users\\Yeyian PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Yeyian PC\\Documents\\Home Proyects\\EcommerceReactDotNet\\api\\obj\\",
+>>>>>>> 657de76ca01cb251d3a4559f6ac364755eb6159e
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
