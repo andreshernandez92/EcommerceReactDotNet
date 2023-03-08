@@ -17,7 +17,12 @@ import ProductDetails from '../../features/catalog/ProductDetails';
 import AboutPage from '../../features/about/AboutPage';
 import ContactPage from '../../features/contact/ContactPage';
 import Catalog from '../../features/catalog/Catalog';
+<<<<<<< HEAD
 >>>>>>> 657de76ca01cb251d3a4559f6ac364755eb6159e
+=======
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+>>>>>>> 38dc0d3f65da7d0ba83297fbbe96d60ac9db044c
 function App() {
 const [darkMode, setDarkMode] = useState(false);
 const paletteType = darkMode ? 'dark' : 'light';
@@ -37,6 +42,7 @@ function handleThemeChange() {
 
   return (
     <ThemeProvider theme={theme}>
+      <ToastContainer position='bottom-right' hideProgressBar></ToastContainer>
       <CssBaseline></CssBaseline>
 <<<<<<< HEAD
    <Header darkMode={darkMode} handleThemeChange={handleThemeChange}></Header>;
