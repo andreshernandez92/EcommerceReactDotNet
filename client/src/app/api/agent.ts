@@ -1,15 +1,22 @@
 
 import axios, { AxiosError, AxiosResponse } from 'axios'
-import { title } from 'process';
-import { toast } from 'react-toastify/dist/core';
+import { toast } from 'react-toastify';
+import history from '../customcomponents/Historycustom';
 axios.defaults.baseURL = 'http://localhost:5277/api/'
+
+
 
 const responseBody = (response: AxiosResponse) => response.data;
 
+type MyErrorResponse = {
+    errors: any,
+    title: any,
+  }
 axios.interceptors.response.use(response => {
     return response
-}, (error: AxiosError)=> {
+}, (error: AxiosError<MyErrorResponse>)=> {
     const {data, status} = error.response!;
+    
     switch(status){
         case 400:
             if(data.errors) {
@@ -21,18 +28,20 @@ axios.interceptors.response.use(response => {
                 }
                 throw modelStateErrors.flat();
             }
-            toast.error(data.title);+
+            
+            toast.error(data.title);
             break;
         case 401:
             toast.error(data.title);
             break;
             case 500:
-                toast.error(data.title);
+                history.push('/server-error',{state:{error: data}});
                 break;
             default:
             break; 
-    }
-    return Promise.reject(error.response)
+    
+        }
+        return Promise.reject(error.response)
 })
 
 const requests = {
