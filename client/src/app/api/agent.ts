@@ -48,11 +48,11 @@ const Catalog = {
 }
 
 const TestErrors = {
-    get400Error: () => requests.get('buggy/bad-request'),
-    get401Error: () => requests.get('buggy/unauthorised'),
-    get404Error: () => requests.get('buggy/not-found'),
-    get500Error: () => requests.get('buggy/server-error'),
-    getValidationError: () => requests.get('buggy/validation-error'),
+    get400Error: () => requests.get('Bug/bad-request'),
+    get401Error: () => requests.get('Bug/unauthorised'),
+    get404Error: () => requests.get('Bug/not-found'),
+    get500Error: () => requests.get('Bug/server-error'),
+    getValidationError: () => requests.get('Bug/validation-error'),
 }
 
 const agent = {
