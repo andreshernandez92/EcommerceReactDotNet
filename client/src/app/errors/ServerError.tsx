@@ -6,14 +6,14 @@ import { useLocation } from "react-router-dom";
 import history from '../customcomponents/Historycustom';
 export default function ServerError(){
 
-const {state} = useLocation();
-    return (
+const location = useLocation();
+return (
             <Container component={Paper}>
-                {state?.error ? (
+                {location.state ? (
                         <>
-                    <Typography variant='h3' color='error' gutterBottom>{state.error.title}</Typography>
+                    <Typography variant='h3' color='error' gutterBottom>{location.state.statusText}</Typography>
                     <Divider/>
-                    <Typography>{state.error.detail || 'Internal server error'}</Typography>     
+                    <Typography>{location.state.state || 'Internal server error'}</Typography>     
                         </>
                 ): (
                 <Typography variant='h5' gutterBottom>Server Error</Typography>

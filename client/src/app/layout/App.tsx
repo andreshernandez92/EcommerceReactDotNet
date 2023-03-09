@@ -14,6 +14,7 @@ import Catalog from '../../features/catalog/Catalog';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import ServerError from '../errors/ServerError';
+import NotFound from '../errors/NotFound';
 function App() {
 const [darkMode, setDarkMode] = useState(false);
 const paletteType = darkMode ? 'dark' : 'light';
@@ -44,6 +45,7 @@ function handleThemeChange() {
     <Route path='about' element={<AboutPage/>}/>
     <Route path='contact' element={<ContactPage/>}/>
     <Route path='server-error' element={<ServerError/>}/>
+    <Route path='*' element={<NotFound/>}/>
     </Routes>
     </Container>
     </ThemeProvider>

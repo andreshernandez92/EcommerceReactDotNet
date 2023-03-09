@@ -1,35 +1,18 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './app/layout/styles.css';
 import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Router } from "react-router-dom";
-import historycustom from './app/customcomponents/Historycustom';
-
-const CustomRouter = ({ history, ...props }: any) => {
-  const [state, setState] = useState({
-    action: history.action,
-    location: history.location
-  });
-
-  useLayoutEffect(() => history.listen(setState), [history]);
-
-  return (
-    <Router
-      {...props}
-      location={state.location}
-      navigationType={state.action}
-      navigator={history}
-    />
-  );
-};
+import { BrowserRouter } from "react-router-dom";
+import CustomRouter from './app/customcomponents/CustomRouter';
+import history from './app/customcomponents/Historycustom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-<CustomRouter history={historycustom}>
+<CustomRouter history={history}>
     <App />
     </CustomRouter>
   </React.StrictMode>
