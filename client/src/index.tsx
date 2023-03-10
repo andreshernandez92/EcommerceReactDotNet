@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 import CustomRouter from './app/customcomponents/CustomRouter';
 import history from './app/customcomponents/Historycustom';
+import { StoreProvider } from './app/context/StoreContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,7 +14,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
 <CustomRouter history={history}>
+  <StoreProvider>
     <App />
+    </StoreProvider>
     </CustomRouter>
   </React.StrictMode>
 );

@@ -21,7 +21,6 @@ namespace API.Controllers
     [HttpGet(Name ="GetBasket")]
     public async Task<ActionResult<BasketDto>> GetBasket()
         {
-\
         var basket = await RetrieveBasket();
 
             if (basket == null) return NotFound();
@@ -42,7 +41,7 @@ namespace API.Controllers
         var result = await _context.SaveChangesAsync()>0;
         if(result) return CreatedAtRoute("GetBasket",MapBasketToDto(basket));
 
-        return BadRequest(new ProblemDetails{Title = "Problem saving Item to basket!"})
+        return BadRequest(new ProblemDetails{Title = "Problem saving Item to basket!"});
 
         
     }
@@ -77,7 +76,7 @@ namespace API.Controllers
         Response.Cookies.Append("buyerId", buyerId, cookieOptions);
         var basket = new Basket{BuyerId=buyerId};
         _context.Baskets.Add(basket);
-        return basket
+        return basket;
     }
 
      private BasketDto MapBasketToDto(Basket basket)
