@@ -5,15 +5,17 @@ import { Container } from "@mui/system";
 import { useLocation } from "react-router-dom";
 import history from '../customcomponents/Historycustom';
 export default function ServerError(){
-
-const {state} = useLocation();
-    return (
+const locationinfo = useLocation();
+    
+return (
+        
             <Container component={Paper}>
-                {state?.error ? (
+                {
+                locationinfo.state.state?.error?(
                         <>
-                    <Typography variant='h3' color='error' gutterBottom>{state.error.title}</Typography>
+                    <Typography variant='h3' color='error' gutterBottom>{locationinfo.state.state}</Typography>
                     <Divider/>
-                    <Typography>{state.error.detail || 'Internal server error'}</Typography>     
+                    <Typography>{locationinfo.state.error.detail || 'Internal server error'}</Typography>     
                         </>
                 ): (
                 <Typography variant='h5' gutterBottom>Server Error</Typography>
