@@ -20,6 +20,7 @@ import { useStoreContext } from '../context/StoreContext';
 import { getCookie } from '../utils/util';
 import agent from '../api/agent';
 import LoadingComponent from './LoadingComponent';
+import CheckoutPage from '../../features/checkout/CheckoutPage';
 function App() {
 const [darkMode, setDarkMode] = useState(false);
 
@@ -73,6 +74,7 @@ if(loading) return <LoadingComponent message='Initialising App..'/>
     <Route path='contact' element={<ContactPage/>}/>
     <Route path='server-error' element={<ServerError/>}/>
     <Route path='basket' element={<BasketPage/>}/>
+    <Route path='checkout' element={<CheckoutPage/>}/>
     <Route path='*' element={<NotFound/>}/>
     </Routes>
     </Container>
