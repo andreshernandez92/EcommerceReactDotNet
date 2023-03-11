@@ -2,7 +2,9 @@ import axios, { AxiosError, AxiosResponse } from 'axios'
 import history from '../customcomponents/Historycustom';
 import { toast } from "react-toastify";
 import { resolve } from 'path';
+import { request } from 'http';
 axios.defaults.baseURL = 'http://localhost:5277/api/'
+axios.defaults.withCredentials =true;
 const responseBody = (response: AxiosResponse) => response.data ;
 type MyErrorResponse = {
     errors: any,
@@ -45,8 +47,8 @@ axios.interceptors.response.use( async response => {
 })
 const requests = {
     get: (url: string) => axios.get(url).then(responseBody),
-    post: (url: string, body:{}) => axios.get(url).then(responseBody),
-    put: (url: string, body:{}) => axios.get(url).then(responseBody),
+    post: (url: string, body:{}) => axios.post(url).then(responseBody),
+    put: (url: string, body:{}) => axios.put(url).then(responseBody),
     delete: (url: string) => axios.get(url).then(responseBody),
 }
 
@@ -63,9 +65,19 @@ const TestErrors = {
     getValidationError: () => requests.get('Bug/validation-error'),
 }
 
+const Basket = {
+    get: () => requests.get('basket'),
+    addItem: (productId: number, quantity = 1) => requests.post(`basket?productId=${productId}&quantity=${quantity}`,{}),
+    removeItem: (productId: number, quantity = 1) => requests.delete(`basket?productId=${productId}&quantity=${quantity}`),
+
+
+}
+
+
 const agent = {
     Catalog,
-    TestErrors
+    TestErrors,
+    Basket
 }
 
 export default agent;
