@@ -3,7 +3,7 @@ import { ShoppingCart } from "@mui/icons-material";
 import { Toolbar, Typography, AppBar, Switch, ListItem, List, IconButton, Badge } from "@mui/material"
 import Box from "@mui/material/Box";
 import { Link, NavLink } from "react-router-dom";
-import { useStoreContext } from "../context/StoreContext";
+import { useAppSelector } from "../store/configStore";
 interface Props{
     darkMode: boolean;
     handleThemeChange: () => void;
@@ -30,7 +30,7 @@ typography:'h6',
 color: 'text.secondary'
 }}
 export default function Header({darkMode, handleThemeChange}: Props) {
-    const {basket} = useStoreContext();
+    const {basket} = useAppSelector(state=> state.basket)
     const itemCount = basket?.items.reduce((sum,item)=> sum + item.quantity, 0);
     return(
         <AppBar position='static' sx={{mb: 4}}>

@@ -137,3 +137,4 @@ C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\API\obj\Debug\ne
 C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\API\obj\Debug\net7.0\API.genruntimeconfig.cache
 C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\API\obj\Debug\net7.0\ref\API.dll
 C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\api\bin\Debug\net7.0\package-lock.json
+C:\Users\andre\Documents\React home projects\EcommerceReactDotNet\api\bin\Debug\net7.0\package-lock.json

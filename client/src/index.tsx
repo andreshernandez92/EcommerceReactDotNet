@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './app/layout/styles.css';
 import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from "react-router-dom";
 import CustomRouter from './app/customcomponents/CustomRouter';
 import history from './app/customcomponents/Historycustom';
-import { StoreProvider } from './app/context/StoreContext';
+import { Provider } from 'react-redux';
+import {store} from '../../client/src/app/store/configStore'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,9 +14,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
 <CustomRouter history={history}>
-  <StoreProvider>
+    <Provider store={store}>
     <App />
-    </StoreProvider>
+    </Provider>
     </CustomRouter>
   </React.StrictMode>
 );
