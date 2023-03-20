@@ -15,7 +15,7 @@ const midLinks = [
 
 ]
 const rightLinks = [
-    {title: 'login', path: '/login'},
+    {title: 'login', path: '/checkout'},
     {title: 'register', path: '/regiser'}
     ]
 
