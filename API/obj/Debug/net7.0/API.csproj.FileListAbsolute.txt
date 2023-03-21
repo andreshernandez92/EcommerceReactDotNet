@@ -165,3 +165,4 @@ C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\api\bin\Debug\ne
 C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\api\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\api\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\api\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\andre\Documents\React home projects\EcommerceReactDotNet\api\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
