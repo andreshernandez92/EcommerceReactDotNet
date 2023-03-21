@@ -10,7 +10,7 @@ type MyErrorResponse = {
     title: any,
   }
 
-const sleep = () => new Promise(resolve => setTimeout(resolve, 1000))
+const sleep = () => new Promise(resolve => setTimeout(resolve, 500))
 
 axios.interceptors.response.use( async response => {
     await sleep();
@@ -51,8 +51,8 @@ axios.interceptors.response.use( async response => {
 })
 const requests = {
     get: (url: string, params?: URLSearchParams) => axios.get(url, {params}).then(responseBody),
-    post: (url: string, body:{}) => axios.post(url).then(responseBody),
-    put: (url: string, body:{}) => axios.put(url).then(responseBody),
+    post: (url: string, body: {}) => axios.post(url, body).then(responseBody),
+    put: (url: string, body: {}) => axios.put(url, body).then(responseBody),
     delete: (url: string) => axios.delete(url).then(responseBody),
 }
 
@@ -70,6 +70,13 @@ const TestErrors = {
     getValidationError: () => requests.get('Bug/validation-error'),
 }
 
+
+const Account = {
+    login: (values: any) => requests.post('account/login', values),
+    register: (values: any) => requests.post('account/register', values),
+    currentUser: () => requests.get('account/currentUser'),
+}
+
 const Basket = {
     get: () => requests.get('basket'),
     addItem: (productId: number, quantity = 1) => requests.post(`basket?productId=${productId}&quantity=${quantity}`,{}),
@@ -82,7 +89,8 @@ const Basket = {
 const agent = {
     Catalog,
     TestErrors,
-    Basket
+    Basket,
+    Account
 }
 
 export default agent;

@@ -22,6 +22,8 @@ import LoadingComponent from './LoadingComponent';
 import CheckoutPage from '../../features/checkout/CheckoutPage';
 import { useAppDispatch } from '../store/configStore';
 import { setBasket } from '../../features/basket/basketSlice';
+import Login from '../../features/account/Login';
+import Register from '../../features/account/Register';
 function App() {
 const dispatch = useAppDispatch();
 const [darkMode, setDarkMode] = useState(false);
@@ -48,7 +50,7 @@ const theme = createTheme({
   palette: {
     mode: paletteType,
     background: {
-      default: paletteType === 'light' ? 'eaeaea' : '#121212'
+      default: (paletteType === 'light') ?  '#eaeaea' : '#121212'
     }
   }
 })
@@ -75,6 +77,8 @@ if(loading) return <LoadingComponent message='Initialising App..'/>
     <Route path='server-error' element={<ServerError/>}/>
     <Route path='basket' element={<BasketPage/>}/>
     <Route path='checkout' element={<CheckoutPage/>}/>
+    <Route path='login' element={<Login/>}/>
+    <Route path='register' element={<Register/>}/>
     <Route path='*' element={<NotFound/>}/>
     </Routes>
     </Container>

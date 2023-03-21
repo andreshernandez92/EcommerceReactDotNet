@@ -15,8 +15,8 @@ const midLinks = [
 
 ]
 const rightLinks = [
-    {title: 'login', path: '/checkout'},
-    {title: 'register', path: '/regiser'}
+    {title: 'login', path: '/login'},
+    {title: 'register', path: '/register'}
     ]
 
 const navStyles = {
