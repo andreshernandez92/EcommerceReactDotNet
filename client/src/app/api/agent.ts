@@ -1,8 +1,8 @@
 import axios, { AxiosError, AxiosResponse } from 'axios'
-import history from '../customcomponents/Historycustom';
 import { toast } from "react-toastify";
 import { PaginatedResponse } from '../models/pagination';
 import { store } from '../store/configStore';
+import { router } from '../router/Routes';
 axios.defaults.baseURL = 'http://localhost:5277/api/'
 axios.defaults.withCredentials =true;
 const responseBody = (response: AxiosResponse) => response.data ;
@@ -48,7 +48,7 @@ axios.interceptors.response.use( async response => {
             break;
             case 500:    
             console.log(error.response!)
-            history.push('/server-error',{state:data, status, statusText});
+            router.navigate('/server-error', {state: {error: data}});
                 break;
             default:
             break; 

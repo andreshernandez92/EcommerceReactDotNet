@@ -1,17 +1,12 @@
-import { Button, Divider } from "@mui/material";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import { Container } from "@mui/system";
-import { useLocation } from "react-router-dom";
-import history from '../customcomponents/Historycustom';
-export default function NotFound(){
-return(
-            <Container component={Paper} sx={{height:400}}>
-               
-                    <Typography variant='h3' color='error' gutterBottom>Oops - we could not find what you are looking for</Typography>
-                    <Divider/>
-                    <Button onClick={()=> history.push('/catalog')}> Go back to the Catalog!</Button>
-            </Container>
-)
+import { Container, Paper, Typography, Divider, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
+export default function NotFound() {
+    return (
+        <Container component={Paper} style={{height: 400}}>
+            <Typography gutterBottom variant={'h3'}>Oops - we could not find what your are looking for!</Typography>
+            <Divider />
+            <Button component={Link} to='/catalog' fullWidth>Go back to the shop</Button>
+        </Container>
+    )
 }

@@ -1,4 +1,3 @@
-import { NewspaperTwoTone } from "@mui/icons-material";
 import { createAsyncThunk, createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 import agent from "../../app/api/agent";
 import { Metadata } from "../../app/models/pagination";
@@ -134,7 +133,7 @@ export const catalogSlice = createSlice({
         });
         builder.addCase(fetchFilters.fulfilled, (state, action) => {
             state.brands = action.payload.brands;
-            state.types = action. payload.types;
+            state.types = action.payload.types;
             state.filtersLoaded= true;
             state.status='idle';
         });

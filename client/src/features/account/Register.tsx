@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { Avatar, Grid, Paper, TextField, Typography } from '@mui/material';
@@ -9,7 +9,6 @@ import { LockOutlined } from '@mui/icons-material';
 import { toast } from 'react-toastify';
 export default function Register() {
   const navigate = useNavigate();
-  const location = useLocation();
   const {register,setError ,handleSubmit, formState: {isSubmitting, errors, isValid}}= useForm({
     mode:'all'
   })

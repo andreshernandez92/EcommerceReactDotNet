@@ -1,23 +1,22 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, {  } from 'react';
 import ReactDOM from 'react-dom/client';
 import './app/layout/styles.css';
-import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
-import CustomRouter from './app/customcomponents/CustomRouter';
-import history from './app/customcomponents/Historycustom';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './app/router/Routes';
 import { Provider } from 'react-redux';
-import {store} from '../../client/src/app/store/configStore'
+import { store } from './app/store/configStore';
+
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-<CustomRouter history={history}>
     <Provider store={store}>
-    <App />
+      <RouterProvider router={router} />
     </Provider>
-    </CustomRouter>
   </React.StrictMode>
 );
 

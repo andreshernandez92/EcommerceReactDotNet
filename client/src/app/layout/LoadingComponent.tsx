@@ -1,4 +1,3 @@
-import { PropaneSharp } from '@mui/icons-material';
 import { Backdrop, Box, CircularProgress, Typography } from '@mui/material';
 
 interface Props {
