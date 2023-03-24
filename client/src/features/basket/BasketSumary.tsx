@@ -1,11 +1,15 @@
 import { TableContainer, Paper, Table, TableBody, TableRow, TableCell } from "@mui/material";
 import { useAppSelector } from "../../app/store/configStore";
+interface Props {
+    subtotal?: number;
+}
 
-export default function BasketSummary() {
-
+export default function BasketSummary({subtotal}: Props) {
+  
     const {basket} = useAppSelector(state => state.basket);
-    const Subtotal = basket?.items.reduce((sum,item)=> sum + (item.quantity * item.price),0) ?? 0;
-    const deliveryFee = Subtotal > 100 ? 0 : 50;
+    if (subtotal === undefined) 
+    subtotal = basket?.items.reduce((sum, item) => sum + (item.quantity * item.price), 0) ?? 0;
+    const deliveryFee = subtotal > 100 ? 0 : 50;
     return (
         <>
             <TableContainer component={Paper} variant={'outlined'}>
@@ -13,7 +17,7 @@ export default function BasketSummary() {
                     <TableBody>
                         <TableRow>
                             <TableCell colSpan={2}>Subtotal</TableCell>
-                            <TableCell align="right">${Subtotal}</TableCell>
+                            <TableCell align="right">${subtotal}</TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell colSpan={2}>Delivery fee*</TableCell>
@@ -21,7 +25,7 @@ export default function BasketSummary() {
                         </TableRow>
                         <TableRow>
                             <TableCell colSpan={2}>Total</TableCell>
-                            <TableCell align="right">${(Subtotal+deliveryFee).toFixed(2)}</TableCell>
+                            <TableCell align="right">${(subtotal+deliveryFee).toFixed(2)}</TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell>

@@ -13,7 +13,7 @@ namespace API.Controllers
 
     public class AccountController: BaseApiController
     {
-        private readonly UserManager<User> _userManager;
+          private readonly UserManager<User> _userManager;
         private readonly Tokenservice _tokenService;
         private readonly StoreContext _context;
 
@@ -88,6 +88,17 @@ public async Task<ActionResult> Register(RegisterDto registerDto){
                 Token = await _tokenService.GenerateToken(user),
                 Basket= userBasket?.MapBaskettoDto()
             };
+        }
+
+      [Authorize]
+        [HttpGet("savedAddress")]
+        public async Task<ActionResult<UserAddress>> GetSavedAddress()
+        {
+
+            return await _userManager.Users
+                .Where(x => x.UserName == User.Identity.Name)
+                .Select(user => user.Address)
+                .FirstOrDefaultAsync();
         }
            private async Task<Basket> RetrieveBasket(string buyerId)
         {

@@ -11,30 +11,68 @@ import PaymentForm from './PaymentForm';
 import Review from './Review';
 import { FormProvider, useForm } from 'react-hook-form';
 import { FieldValues } from 'react-hook-form/dist/types/fields';
-
+import { validationSchema } from './checkoutValidation';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useEffect, useState } from 'react';
+import agent from '../../app/api/agent';
+import { LoadingButton } from '@mui/lab';
+import { clearBasket } from '../basket/basketSlice';
+import { useAppDispatch } from '../../app/store/configStore';
 const steps = ['Shipping address', 'Review your order','Payment details'];
 
-function getStepContent(step: number) {
-  switch (step) {
-    case 0:
-      return <AddressForm />;
-    case 1:
-        return <Review />;
-    case 2:
-        return <PaymentForm />;
-    default:
-      throw new Error('Unknown step');
-  }
-}
 
 
 export default function CheckoutPage() {
-    const methods = useForm();
-    const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = useState(0);
+  const[orderNumber, setOrderNumber] = useState(0)
+  const [loading, setLoading] = useState(false);
+  const dispatch = useAppDispatch();
+  function getStepContent(step: number) {
+    switch (step) {
+      case 0:
+        return <AddressForm />;
+      case 1:
+          return <Review />;
+      case 2:
+          return <PaymentForm />;
+      default:
+        throw new Error('Unknown step');
+    }
+  }
 
-  const handleNext = (data: FieldValues) => {
-    if(activeStep === 0){
-    console.log(data)
+  const currentValidationSchema =validationSchema[activeStep]
+
+  const methods = useForm({
+    mode: 'all',
+    resolver: yupResolver(currentValidationSchema)
+})
+
+useEffect(() => {
+  agent.Account.fetchAddress()
+      .then(response => {
+          if (response) {
+              methods.reset({ ...methods.getValues(), ...response, saveAddress: false })
+          }
+      })
+}, [methods]);
+
+  const handleNext =  async (data: FieldValues) => {
+    const {nameOncard, SaveAddress,...ShippingAddress} =  data;
+    if(activeStep === steps.length-1){
+    setLoading(true)
+    try {
+      console.log("inside handle next" + SaveAddress,ShippingAddress)
+      const orderNumber = await agent.Orders.create({SaveAddress, ShippingAddress})
+      setOrderNumber(orderNumber)
+      setActiveStep(activeStep+1);
+      dispatch(clearBasket());
+      setLoading(false)
+    } catch (error) {
+    console.log(error);
+    setLoading(false)  
+    }
+}else{
+  setActiveStep(activeStep+1)
 }
     setActiveStep(activeStep + 1);
   };
@@ -62,9 +100,8 @@ export default function CheckoutPage() {
                 Thank you for your order.
               </Typography>
               <Typography variant="subtitle1">
-                Your order number is #2001539. We have emailed your order
-                confirmation, and will send you an update when your order has
-                shipped.
+                Your order number is #{orderNumber}. We have not emailed your order
+                confirmation, and will send no you an update as this is Fake Store
               </Typography>
             </React.Fragment>
           ) : (
@@ -76,13 +113,16 @@ export default function CheckoutPage() {
                     Back
                   </Button>
                 )}
-                <Button
+                <LoadingButton
+                loading={loading}
+                disabled={!methods.formState.isValid}
                   variant="contained"
-                  onClick={handleNext}
+                 type="submit"
                   sx={{ mt: 3, ml: 1 }}
+                
                 >
                   {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
-                </Button>
+                </LoadingButton>
               </Box>
             </form>
           )}

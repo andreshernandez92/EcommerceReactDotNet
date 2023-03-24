@@ -23,15 +23,16 @@ namespace API.Controllers
             
         }
 
-[HttpGet]
-public async Task<ActionResult<List<OrderDto>>> GetOrders()
-{
-    return await _context.Orders
-    .ProjectOrderToOrderDto()
-    .Include(o => o.OrderItems)
-    .Where(x=>x.BuyerId == User.Identity.Name)
-    .ToListAsync();
-}
+ [HttpGet]
+        public async Task<ActionResult<List<OrderDto>>> GetOrders()
+        {
+            var orders = await _context.Orders
+                .ProjectOrderToOrderDto()
+                .Where(x => x.BuyerId == User.Identity.Name)
+                .ToListAsync();
+
+            return orders;
+        }
 
 [HttpGet("{id}", Name= "GetOrder")]
 public async Task<ActionResult<OrderDto>> GetOrder(int id)
@@ -87,6 +88,7 @@ public async Task<ActionResult<int>> CreateOrder(CreateOrderDto orderDto){
         _context.Orders.Add(order);
         _context.Baskets.Remove(basket);
 
+
         if(orderDto.SaveAddress)
         {
              var user = await _context.Users
@@ -102,7 +104,7 @@ public async Task<ActionResult<int>> CreateOrder(CreateOrderDto orderDto){
                 Zip = orderDto.ShippingAddress.Zip,
                 Country =orderDto.ShippingAddress.Country,
             };
-            _context.Update(user);
+            user.Address = Address;
         }
 
 

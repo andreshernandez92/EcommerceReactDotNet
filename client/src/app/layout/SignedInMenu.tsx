@@ -1,27 +1,31 @@
 import { Button, Menu, Fade, MenuItem } from "@mui/material";
-import React from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { signOut } from "../../features/account/accountSlice";
 import { clearBasket } from "../../features/basket/basketSlice";
 import { useAppDispatch, useAppSelector } from "../store/configStore";
 
-export default function SignedinMenu(){
-    const dispatch = useAppDispatch();
-    const {user} = useAppSelector(state=> state.account)
-    const [anchorEl, setAnchorEl] = React.useState(null);
+export default function SignedInMenu() {
+  const dispatch = useAppDispatch();
+  const { user } = useAppSelector(state => state.account);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event:any) => {
+
+  const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
 
   return (
     <>
-      <Button 
-      color='inherit'
-      onClick={handleClick}
-      sx={{typography: 'h6'}}>
+      <Button
+        color='inherit'
+        onClick={handleClick}
+        sx={{ typography: 'h6' }}
+      >
         {user?.email}
       </Button>
       <Menu
@@ -31,10 +35,11 @@ export default function SignedinMenu(){
         TransitionComponent={Fade}
       >
         <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My Orders</MenuItem>
+        <MenuItem component={Link} to='/orders'>My orders</MenuItem>
         <MenuItem onClick={() => {
           dispatch(signOut());
-          dispatch(clearBasket())}}>Logout</MenuItem>
+          dispatch(clearBasket());
+        }}>Logout</MenuItem>
       </Menu>
     </>
   );
