@@ -23,6 +23,8 @@ namespace API.Entities.OrderAggregate
 
         public OrderStatus orderStatus { get; set; } = OrderStatus.Pending;
 
+        public string PaymentIntentId { get; set; }
+
 
         public decimal GetTotal()
         {

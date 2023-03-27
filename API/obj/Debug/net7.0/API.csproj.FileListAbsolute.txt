@@ -166,3 +166,16 @@ C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\api\bin\Debug\ne
 C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\api\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\api\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\andre\Documents\React home projects\EcommerceReactDotNet\api\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\API\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\API\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\API\bin\Debug\net7.0\Stripe.net.dll
+C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\API\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\API\bin\Debug\net7.0\System.Drawing.Common.dll
+C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\API\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\API\bin\Debug\net7.0\System.Security.Permissions.dll
+C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\API\bin\Debug\net7.0\System.Windows.Extensions.dll
+C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\API\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\API\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\API\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\API\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Yeyian PC\Documents\Home Proyects\EcommerceReactDotNet\API\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
