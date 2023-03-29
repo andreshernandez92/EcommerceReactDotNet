@@ -82,7 +82,8 @@ const Account = {
     login: (values: any) => requests.post('account/login', values),
     register: (values: any) => requests.post('account/register', values),
     currentUser: () => requests.get('account/currentUser'),
-    fetchAddress:() => requests.get('account/savedAddress')
+    fetchAddress:() => requests.get('account/savedAddress'),
+    trial:() => console.log(requests.get('account/savedAddress').then(response=>console.log(response))),
 }
 
 const Basket = {
@@ -91,6 +92,10 @@ const Basket = {
     removeItem: (productId: number, quantity = 1) => requests.delete(`basket?productId=${productId}&quantity=${quantity}`),
 
 
+}
+
+const Payments = {
+    createPaymentIntent: () => requests.post('payment', {})
 }
 
 const Orders = {
@@ -104,7 +109,8 @@ const agent = {
     TestErrors,
     Basket,
     Account,
-    Orders
+    Orders,
+    Payments
 }
 
 export default agent;

@@ -100,7 +100,7 @@ public async Task<ActionResult> Register(RegisterDto registerDto){
                 .Select(user => user.Address)
                 .FirstOrDefaultAsync();
         }
-           private async Task<Basket> RetrieveBasket(string buyerId)
+        private async Task<Basket> RetrieveBasket(string buyerId)
         {
             
             if(string.IsNullOrEmpty(buyerId)){
@@ -108,7 +108,10 @@ public async Task<ActionResult> Register(RegisterDto registerDto){
                 return null;            
                 }
 
-
+            Console.WriteLine(await Task.FromResult(_context.Baskets
+            .Include(i => i.Items)
+            .ThenInclude(p=> p.Product)
+            .FirstOrDefault(x => x.BuyerId == buyerId)));
             return await Task.FromResult(_context.Baskets
             .Include(i => i.Items)
             .ThenInclude(p=> p.Product)

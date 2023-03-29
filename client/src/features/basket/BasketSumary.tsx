@@ -17,7 +17,7 @@ export default function BasketSummary({subtotal}: Props) {
                     <TableBody>
                         <TableRow>
                             <TableCell colSpan={2}>Subtotal</TableCell>
-                            <TableCell align="right">${subtotal}</TableCell>
+                            <TableCell align="right">${subtotal.toFixed(2)}</TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell colSpan={2}>Delivery fee*</TableCell>
