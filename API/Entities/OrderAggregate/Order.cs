@@ -13,7 +13,7 @@ namespace API.Entities.OrderAggregate
 
         public ShippingAddress ShippingAddress{ get; set; }
 
-        public DateTime OrderDate { get; set; } =DateTime.Now;
+        public DateTime OrderDate { get; set; } =DateTime.UtcNow;
 
         public List<OrderItem> OrderItems  { get; set; }
 
@@ -21,7 +21,7 @@ namespace API.Entities.OrderAggregate
 
         public decimal DeliveryFee { get; set; }
 
-        public OrderStatus orderStatus { get; set; } = OrderStatus.Pending;
+        public OrderStatus OrderStatus { get; set; } = OrderStatus.Pending;
 
         public string PaymentIntentId { get; set; }
 

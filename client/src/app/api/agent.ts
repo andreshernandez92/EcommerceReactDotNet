@@ -82,8 +82,8 @@ const Account = {
     login: (values: any) => requests.post('account/login', values),
     register: (values: any) => requests.post('account/register', values),
     currentUser: () => requests.get('account/currentUser'),
-    fetchAddress:() => requests.get('account/savedAddress'),
-    trial:() => console.log(requests.get('account/savedAddress').then(response=>console.log(response))),
+    fetchAddress:() => requests.get('/Account/savedAddress'),
+    trial:() => requests.get('/Account/savedAddress').then(response=>console.log(response)),
 }
 
 const Basket = {

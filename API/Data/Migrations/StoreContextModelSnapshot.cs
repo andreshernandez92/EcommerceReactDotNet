@@ -76,14 +76,14 @@ namespace API.Data.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("OrderStatus")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("PaymentIntentId")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Subtotal")
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("orderStatus")
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

@@ -17,7 +17,8 @@ namespace API.Controllers
         private readonly Tokenservice _tokenService;
         private readonly StoreContext _context;
 
-        public AccountController(UserManager<User> userManager, Tokenservice tokenService, StoreContext context)
+        public AccountController(UserManager<User> userManager, Tokenservice tokenService,
+         StoreContext context)
     {
             _context = context;
         _userManager = userManager;
@@ -33,10 +34,6 @@ namespace API.Controllers
 
         var userBasket= await RetrieveBasket(loginDto.UserName);
         var anonBasket = await RetrieveBasket(Request.Cookies["buyerId"]);
-
-        Console.WriteLine("Gets here" + userBasket);
-         Console.WriteLine("Gets here2" + anonBasket);
-
 
         if(anonBasket != null)
         {
@@ -90,11 +87,11 @@ public async Task<ActionResult> Register(RegisterDto registerDto){
             };
         }
 
-      [Authorize]
+    
+        [Authorize]
         [HttpGet("savedAddress")]
         public async Task<ActionResult<UserAddress>> GetSavedAddress()
         {
-
             return await _userManager.Users
                 .Where(x => x.UserName == User.Identity.Name)
                 .Select(user => user.Address)

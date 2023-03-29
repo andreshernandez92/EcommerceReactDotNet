@@ -86,7 +86,7 @@ namespace API.Data.Migrations
                     OrderDate = table.Column<DateTime>(type: "TEXT", nullable: false),
                     Subtotal = table.Column<decimal>(type: "TEXT", nullable: false),
                     DeliveryFee = table.Column<decimal>(type: "TEXT", nullable: false),
-                    orderStatus = table.Column<int>(type: "INTEGER", nullable: false),
+                    OrderStatus = table.Column<int>(type: "INTEGER", nullable: false),
                     PaymentIntentId = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>

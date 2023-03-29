@@ -85,9 +85,10 @@ public async Task<ActionResult<int>> CreateOrder(CreateOrderDto orderDto){
         _context.Orders.Add(order);
         _context.Baskets.Remove(basket);
 
-
+        Console.WriteLine(orderDto.SaveAddress);
         if(orderDto.SaveAddress)
         {
+            Console.WriteLine("STARTS CREATING USER ADDRESS");
              var user = await _context.Users
                     .Include(a => a.Address)
                     .FirstOrDefaultAsync(x => x.UserName == User.Identity.Name);

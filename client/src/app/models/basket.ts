@@ -12,7 +12,7 @@
         id: number;
         buyerId: string;
         items: BasketItem[];
-        paymentIntentId: string;
+        paymentIntentId?: string;
         clientSecret?: string;
     }
 

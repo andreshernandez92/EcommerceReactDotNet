@@ -23,13 +23,13 @@ namespace API.Services
             var intent = new PaymentIntent();
 
             var subtotal = basket.Items.Sum(item=> item.Quantity * item.Product.Price);
-            var deliveryFee = subtotal > 10000 ? 0 : 500;
+            var deliveryFee = subtotal > 100 ? 0 : 50;
 
             if(string.IsNullOrEmpty(basket.PaymentIntentId))
             {
             var options = new PaymentIntentCreateOptions
             {
-                Amount = Convert.ToInt64(subtotal) + Convert.ToInt64(deliveryFee),
+                Amount = Decimal.ToInt64(subtotal*100) + Decimal.ToInt64(deliveryFee*100),
                 Currency = "usd",
                 PaymentMethodTypes= new List<string> {"card"}
             };
@@ -40,7 +40,7 @@ namespace API.Services
             {
             var options = new PaymentIntentUpdateOptions
                 {
-                Amount = Convert.ToInt64(subtotal) + Convert.ToInt64(deliveryFee)
+                Amount = Decimal.ToInt64(subtotal*100) + Decimal.ToInt64(deliveryFee*100)
                 };
             await service.UpdateAsync(basket.PaymentIntentId,options);
             }

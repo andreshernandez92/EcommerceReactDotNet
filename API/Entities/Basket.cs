@@ -15,6 +15,7 @@ namespace API.Entities
             if (Items.All(item=> item.ProductId!= product.Id))
             {
                 Items.Add(new BastketItem{Product = product, Quantity= quantity});
+                return;
             }
             var existingItem = Items.FirstOrDefault(item => item.ProductId == product.Id);
             if(existingItem != null) existingItem.Quantity += quantity;

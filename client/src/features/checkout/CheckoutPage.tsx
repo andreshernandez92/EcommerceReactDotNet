@@ -60,20 +60,20 @@ export default function CheckoutPage() {
     })
 
     useEffect(() => {
-        agent.Account.trial()
-        // agent.Account.fetchAddress()
-        //     .then(response => {
-        //         console.log("response " + response)
-        //         if (response) {
-        //             methods.reset({ ...methods.getValues(), ...response, saveAddress: false })
-        //         }
-        //     })
+        agent.Account.fetchAddress()
+            .then(response => {
+                console.log("response " + response)
+                if (response) {
+                    methods.reset({ ...methods.getValues(), ...response, saveAddress: false })
+                }
+            })
     }, [methods]);
 
     async function submitOrder(data: FieldValues) {
         setLoading(true);
-        const { nameOnCard, saveAddress, ...address } = data;
-        if (!stripe || !elements) return; // stripe not ready
+        const { nameOnCard, SaveAddress, ...address } = data;
+        
+        if (!stripe || !elements) return; 
         try {
             const cardElement = elements.getElement(CardNumberElement);
             const paymentResult = await stripe.confirmCardPayment(basket?.clientSecret!, {
@@ -86,7 +86,7 @@ export default function CheckoutPage() {
             });
           
             if (paymentResult.paymentIntent?.status === 'succeeded') {
-                const orderNumber = await agent.Orders.create({ saveAddress, shippingAddress: address });
+                const orderNumber = await agent.Orders.create({ SaveAddress, shippingAddress: address });
                 setOrderNumber(orderNumber);
                 setPaymentSucceeded(true);
                 setPaymentMessage('Thank you - we have received your payment');
