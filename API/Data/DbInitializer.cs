@@ -30,7 +30,7 @@ namespace API.Data
                 };
 
                 await userManager.CreateAsync(admin, "Pa$$w0rd");
-                await userManager.AddToRoleAsync(admin, "Member");
+                await userManager.AddToRolesAsync(admin, new[] {"Member", "Admin"});
 }
             if(context.Products.Any()) return;
             var products = new List<Product>{
