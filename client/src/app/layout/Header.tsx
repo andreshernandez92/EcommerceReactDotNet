@@ -59,6 +59,13 @@ export default function Header({darkMode, handleThemeChange}: Props) {
                     {title.toUpperCase()}
                 </ListItem>
             ))}
+            {user &&
+        <ListItem component={NavLink}
+        to={'/inventory'}
+        sx={navStyles}>
+        Inventory
+        </ListItem>
+         }
         </List>
 
 
