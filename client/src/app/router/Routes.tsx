@@ -12,6 +12,8 @@ import NotFound from "../errors/NotFound";
 import ServerError from "../errors/ServerError";
 import App from "../layout/App";
 import RequireAuth from "./RequireAuth";
+import Inventory from "../../features/admin/Inventory";
+
 
 export const router = createBrowserRouter([
     {
@@ -22,6 +24,7 @@ export const router = createBrowserRouter([
             {element: <RequireAuth />, children: [
                 {path: 'checkout', element: <CheckoutWrapper />},
                 {path: 'orders', element: <Orders />},
+                {path: 'inventory', element: <Inventory />}
             ]},
            
             {path: 'catalog', element: <Catalog />},
@@ -39,10 +42,9 @@ export const router = createBrowserRouter([
 ])
 
 
-/*
-
+/***
  // admin routes
             {element: <RequireAuth roles={['Admin']} />, children: [
-                {path: 'inventory', element: <Inventory />},
+                ,
             ]},
-*/
+ */

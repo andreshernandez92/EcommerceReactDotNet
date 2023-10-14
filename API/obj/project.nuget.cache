@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oz7wTpfOV797pir+vjhYIPquL7i44irKqx7FzFtj0xT2We37dqiI9FVt+73/Bq6SMIWDzuKnF2l8pRjL1y/oHw==",
+  "dgSpecHash": "uP3DTkx2Dg3RJI5qBnTTrvv8KJQYlX4R2zJWtiC5/4EZW0RJcP5uTuH3MTG5ShmJecCBNoYv8RAV6dnKjoDbVw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\API.csproj",
+  "projectFilePath": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yeyian PC\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Yeyian PC\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
