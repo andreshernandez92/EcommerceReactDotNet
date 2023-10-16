@@ -1,7 +1,6 @@
 import { Box, Paper, Typography, Grid, Button } from "@mui/material";
 import { useEffect } from "react";
 import { FieldValues, useForm } from "react-hook-form";
-import AppDropzone from "../../app/components/AppDropzone";
 import AppSelectList from "../../app/components/AppSelectList";
 import AppTextInput from "../../app/components/AppTextInput";
 import useProducts from "../../app/hooks/useProducts";
@@ -9,7 +8,7 @@ import { Product } from "../../app/models/product";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { validationSchema } from "./productValidation";
 import agent from "../../app/api/agent";
-import { useAppDispatch } from "../../app/store/configureStore";
+import { useAppDispatch } from "../../app/store/configStore";
 import { setProduct } from "../catalog/catalogSlice";
 import { LoadingButton } from "@mui/lab";
 
@@ -75,12 +74,7 @@ export default function ProductForm({ product, cancelEdit }: Props) {
                     </Grid>
                     <Grid item xs={12}>
                         <Box display='flex' justifyContent='space-between' alignItems='center'>
-                            <AppDropzone control={control} name='file' />
-                            {watchFile ? (
-                                <img src={watchFile.preview} alt="preview" style={{ maxHeight: 200 }} />
-                            ) : (
-                                <img src={product?.pictureUrl} alt={product?.name} style={{ maxHeight: 200 }} />
-                            )}
+                        <AppTextInput control={control} name='file' label='file' />
                         </Box>
 
                     </Grid>
