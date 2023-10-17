@@ -30,26 +30,23 @@ function App() {
     initApp().then(() => setLoading(false));
   }, [initApp])
 
-  const [darkMode, setDarkMode] = useState(false);
-  const palleteType = darkMode ? 'dark' : 'light';
   const theme = createTheme({
     palette: {
-      mode: palleteType,
+   
       background: {
-        default: (palleteType === 'light') ? '#eaeaea' : '#121212'
+        default: '#eaeaea' 
       }
     }
   })
 
-  function handleThemeChange() {
-    setDarkMode(!darkMode);
-  }
+ 
 
+  /** <Header/> */
   return (
     <ThemeProvider theme={theme}>
-      <ToastContainer position="bottom-right" hideProgressBar theme="colored" />
+      <ToastContainer position="top-center" hideProgressBar theme="colored" />
       <CssBaseline />
-      <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
+      
       {loading ? <LoadingComponent message="Initialising app..." />
           : location.pathname === '/' ? <HomePage />
           : <Container sx={{mt: 4}}>

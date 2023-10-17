@@ -5,10 +5,7 @@ import Box from "@mui/material/Box";
 import { Link, NavLink } from "react-router-dom";
 import { useAppSelector } from "../store/configStore";
 import SignedinMenu from "./SignedInMenu";
-interface Props{
-    darkMode: boolean;
-    handleThemeChange: () => void;
-}
+
 const midLinks = [
 {title: 'catalog', path: '/catalog'},
 {title: 'about', path: '/about'},
@@ -30,7 +27,7 @@ typography:'h6',
 '&.active': {
 color: 'text.secondary'
 }}
-export default function Header({darkMode, handleThemeChange}: Props) {
+export default function Header() {
     const {basket} = useAppSelector(state=> state.basket);
     const {user} = useAppSelector(state => state.account);
     const itemCount = basket?.items.reduce((sum,item)=> sum + item.quantity, 0);
@@ -43,7 +40,7 @@ export default function Header({darkMode, handleThemeChange}: Props) {
         sx={navStyles}>
         ECOMMERCEREACTDOTNET
         </Typography>
-        <Switch checked={darkMode} onChange={handleThemeChange}></Switch>
+      
         
 </Box>
 

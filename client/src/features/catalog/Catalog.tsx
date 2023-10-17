@@ -23,10 +23,7 @@ export default function Catalog() {
 
 if(!filtersLoaded) return <LoadingComponent message="Loading Products..."/>
 
-    return(
-        <>
-            <Grid container columnSpacing={4}>
-                <Grid item xs={3}>
+/***            <Grid item xs={3}>
             <Paper sx={{mb:2}}>
                 <ProductSearch/>
             </Paper>
@@ -52,16 +49,27 @@ if(!filtersLoaded) return <LoadingComponent message="Loading Products..."/>
     />
 </Paper>
                 </Grid>
-                <Grid item xs={9}>
-                <ProductList products={products}></ProductList>
-                </Grid>
-                <Grid item xs={3}/>
+
+            <Grid item xs={3}/>
                 <Grid item xs={9} sx={{mb:2}}>
                     {metaData &&
                    <AppPagination
                    metaData={metaData}
                    onPageChange={(page:number)=> dispatch(setPageNumber({pageNumber: page}))}/>}
                 </Grid>
+ */
+
+    return(
+        <>
+
+
+            <Grid container spacing={6}>
+
+    
+            <Grid item xs={12} sm={6} md={4}>
+                <ProductList products={products}></ProductList>
+                </Grid>
+                
             </Grid>
     </>
 )
