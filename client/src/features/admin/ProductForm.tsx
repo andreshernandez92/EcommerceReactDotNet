@@ -74,7 +74,7 @@ export default function ProductForm({ product, cancelEdit }: Props) {
                     </Grid>
                     <Grid item xs={12}>
                         <Box display='flex' justifyContent='space-between' alignItems='center'>
-                        <AppTextInput control={control} name='file' label='file' />
+                        <AppTextInput control={control} name='file' label='Picture URL' />
                         </Box>
 
                     </Grid>

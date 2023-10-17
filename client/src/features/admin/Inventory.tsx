@@ -6,7 +6,9 @@ import AppPagination from "../../app/components/AppPagination";
 import useProducts from "../../app/hooks/useProducts";
 import { Product } from "../../app/models/product";
 import { useAppDispatch } from "../../app/store/configStore";
-import {  setPageNumber } from "../catalog/catalogSlice";
+import {  removeProduct, setPageNumber } from "../catalog/catalogSlice";
+import agent from "../../app/api/agent";
+import ProductForm from "./ProductForm";
 
 
 export default function Inventory() {
@@ -26,6 +28,17 @@ export default function Inventory() {
         if (selectedProduct) setSelectedProduct(undefined);
         setEditMode(false);
     }
+
+    function handleDeleteProduct(id: number) {
+        setLoading(true);
+        setTarget(id)
+        agent.Admin.deleteProduct(id)
+            .then(() => dispatch(removeProduct(id)))
+            .catch(error => console.log(error))
+            .finally(() => setLoading(false))
+    }
+
+    if (editMode) return <ProductForm product={selectedProduct} cancelEdit={cancelEdit} />
 
     return (
         <>
@@ -67,9 +80,10 @@ export default function Inventory() {
                                 <TableCell align="center">{product.quantityStock}</TableCell>
                                 <TableCell align="right">
                                     <Button onClick={() => handleSelectProduct(product)} startIcon={<Edit />} />
-                                     
-                      
-                                        
+                                    <LoadingButton 
+                                        loading={loading && target === product.id} 
+                                        onClick={() => handleDeleteProduct(product.id)} 
+                                        startIcon={<Delete />} color='error' />
                                 </TableCell>
                             </TableRow>
                         ))}
