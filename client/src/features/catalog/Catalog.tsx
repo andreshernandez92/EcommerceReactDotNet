@@ -2,12 +2,12 @@ import ProductList from "./ProductList";
 import LoadingComponent from "../../app/layout/LoadingComponent";
 import { useAppDispatch, useAppSelector } from "../../app/store/configStore";
 import { setPageNumber, setProductParams } from "./catalogSlice";
-import { Grid, Paper } from "@mui/material";
 import ProductSearch from "./ProductSearch";
 import RadioButtonGroup from "../../app/components/RadioButton";
 import CheckboxButtons from "../../app/components/CheckboxButtons";
 import AppPagination from "../../app/components/AppPagination";
 import useProducts from "../../app/hooks/useProducts";
+import { Box ,Grid, Paper  } from "@mui/material";
 
 const sortOptions = [
     {value:'name', label: 'Alphabetical'},
@@ -23,11 +23,14 @@ export default function Catalog() {
 
 if(!filtersLoaded) return <LoadingComponent message="Loading Products..."/>
 
+/***            <Grid item xs={3}>
+            
+
+ */
+
     return(
         <>
-            <Grid container columnSpacing={4}>
-                <Grid item xs={3}>
-            <Paper sx={{mb:2}}>
+        <Paper sx={{mb:2}}>
                 <ProductSearch/>
             </Paper>
             <Paper sx={{mb: 2, p: 2}}>
@@ -51,18 +54,13 @@ if(!filtersLoaded) return <LoadingComponent message="Loading Products..."/>
     onChange={(items: string[]) => dispatch(setProductParams({types: items}))}
     />
 </Paper>
-                </Grid>
-                <Grid item xs={9}>
+                <Box sx={{ flexGrow: 1 }}> 
                 <ProductList products={products}></ProductList>
-                </Grid>
-                <Grid item xs={3}/>
-                <Grid item xs={9} sx={{mb:2}}>
-                    {metaData &&
+                {metaData &&
                    <AppPagination
                    metaData={metaData}
                    onPageChange={(page:number)=> dispatch(setPageNumber({pageNumber: page}))}/>}
-                </Grid>
-            </Grid>
+                </Box>
     </>
 )
 }
