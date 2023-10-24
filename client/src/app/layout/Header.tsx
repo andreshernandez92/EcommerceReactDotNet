@@ -1,6 +1,6 @@
 
 import { ShoppingCart } from "@mui/icons-material";
-import { Toolbar,Divider, Typography, AppBar, Switch, ListItem, List, IconButton, Badge, Button, CssBaseline, Drawer, ListItemButton, ListItemText } from "@mui/material"
+import { Toolbar,Divider, Typography, AppBar, Switch, ListItem, List, IconButton, Badge, Button, CssBaseline, Drawer, ListItemButton, ListItemText, Paper } from "@mui/material"
 import Box from "@mui/material/Box";
 import { Link, NavLink } from "react-router-dom";
 import { useAppSelector } from "../store/configStore";
@@ -8,7 +8,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SignedinMenu from "./SignedInMenu";
 import { useState } from "react";
 import React from "react";
-
+import ProductSearch from "../../features/catalog/ProductSearch";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 const midLinks = [
 {title: 'Homepage', path: '/'},
 {title: 'catalog', path: '/catalog'},
@@ -57,13 +58,16 @@ export default function Header(props:any) {
         </Typography>
         <Divider />
         <List>
+
           {midLinks.map(({title,path}) => (
             <ListItem component={NavLink} to={path} key={path} disablePadding>
               <ListItemButton sx={{ textAlign: 'center' }}>
               <ListItemText > {title.toUpperCase()}</ListItemText>
               </ListItemButton>
             </ListItem>
-          ))}{user &&
+          ))}
+                 
+          {user &&
             <ListItem component={NavLink}
             to={'/inventory'}
             sx={navStyles}>
@@ -97,6 +101,9 @@ export default function Header(props:any) {
               component={NavLink}  to='/'>
                 ECOMMERCEREACTDOTNET
             </Typography>
+            <Paper>
+                <ProductSearch/>
+            </Paper>
             <List sx={{display:{ xs: 'none', sm: 'flex' } }}>
             {midLinks.map(({title,path})=> (
                 <ListItem
@@ -127,7 +134,17 @@ export default function Header(props:any) {
         </IconButton>
         
         {user ? (
-        <SignedinMenu/> ) : (
+          <Box>
+        <Box sx={{display:{ xs: 'none', sm: 'flex' } }} >
+        <SignedinMenu/>
+        </Box >        
+        <IconButton size='large'  sx={{display: { xs: 'block', sm: 'none' },color: 'inherit'}}>
+        <AccountCircleIcon>
+        <SignedinMenu/>
+        </AccountCircleIcon>    
+        </IconButton>
+        </Box >
+        ) : (
             <List sx={{display: 'flex'}}>
             {rightLinks.map(({title,path})=> (
                 <ListItem

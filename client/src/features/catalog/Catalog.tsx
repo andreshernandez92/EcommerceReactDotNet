@@ -24,15 +24,7 @@ export default function Catalog() {
 if(!filtersLoaded) return <LoadingComponent message="Loading Products..."/>
 
 /***            <Grid item xs={3}>
-            
-
- */
-
-    return(
-        <>
-        <Paper sx={{mb:2}}>
-                <ProductSearch/>
-            </Paper>
+          
             <Paper sx={{mb: 2, p: 2}}>
            <RadioButtonGroup
            selectedValue={productParams.orderBy}
@@ -54,6 +46,12 @@ if(!filtersLoaded) return <LoadingComponent message="Loading Products..."/>
     onChange={(items: string[]) => dispatch(setProductParams({types: items}))}
     />
 </Paper>
+
+ */
+
+    return(
+        <>
+       
                 <Box sx={{ flexGrow: 1 }}> 
                 <ProductList products={products}></ProductList>
                 {metaData &&

@@ -2,6 +2,8 @@ import { debounce, TextField } from "@mui/material";
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/store/configStore";
 import { setProductParams } from "./catalogSlice";
+import { Navigate } from "react-router-dom";
+import { router } from "../../app/router/Routes";
 
 export default function ProductSearch() {
     const{productParams} = useAppSelector(state=> state.catalog)
@@ -14,12 +16,14 @@ export default function ProductSearch() {
 
     return(
         <TextField  label='Search Products'
-        variant='outlined'
+        variant='standard'
         fullWidth
         value={searchTerm || ''}
         onChange={(event: any) => {
+            router.navigate('/catalog');
             setSearchTerm(event.target.value);
-            debouncedSearch(event)
+            debouncedSearch(event);
+            
         }}
 
         />
