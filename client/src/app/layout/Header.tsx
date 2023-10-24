@@ -1,6 +1,6 @@
 
 import { ShoppingCart } from "@mui/icons-material";
-import { Toolbar,Divider, Typography, AppBar, Switch, ListItem, List, IconButton, Badge, Button, CssBaseline, Drawer, ListItemButton, ListItemText, Paper } from "@mui/material"
+import { Toolbar,Divider, Typography, AppBar, Switch, ListItem, List, IconButton, Badge, Button, Container, Drawer, ListItemButton, ListItemText, Paper, Fade, Menu, MenuItem } from "@mui/material"
 import Box from "@mui/material/Box";
 import { Link, NavLink } from "react-router-dom";
 import { useAppSelector } from "../store/configStore";
@@ -8,8 +8,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SignedinMenu from "./SignedInMenu";
 import { useState } from "react";
 import React from "react";
-import ProductSearch from "../../features/catalog/ProductSearch";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
+import ProductSearch from "../../features/catalog/ProductSearch";
+import { signOut } from "../../features/account/accountSlice";
+import { clearBasket } from "../../features/basket/basketSlice";
 const midLinks = [
 {title: 'Homepage', path: '/'},
 {title: 'catalog', path: '/catalog'},
@@ -41,6 +44,15 @@ export default function Header(props:any) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
   
+    const handleClick = (event: any) => {
+      setAnchorEl1(event.currentTarget);
+    };
+
+    const [anchorEl1, setAnchorEl1] = useState(null);
+const handleClose = () => {
+  setAnchorEl1(null);
+};
+const open = Boolean(anchorEl1);
     const handleDrawerToggle = () => {
       setMobileOpen((prevState) => !prevState);
     };
@@ -97,11 +109,11 @@ export default function Header(props:any) {
             </IconButton>
             <Typography
               variant="h6"
-              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, ...navStyles}}
+              sx={{ flexGrow: .4, display: { xs: 'none', sm: 'block' }, ...navStyles}}
               component={NavLink}  to='/'>
                 ECOMMERCEREACTDOTNET
             </Typography>
-            <Paper>
+            <Paper sx={{}}>
                 <ProductSearch/>
             </Paper>
             <List sx={{display:{ xs: 'none', sm: 'flex' } }}>
@@ -117,35 +129,28 @@ export default function Header(props:any) {
             ))} {user &&
               <ListItem component={NavLink}
               to={'/inventory'}
-              sx={navStyles}>
-              <ListItemButton sx={{ textAlign: 'center' }}>
-                <ListItemText > INVENTORY</ListItemText>
-                </ListItemButton>
+              sx={{...navStyles,color: 'inherit', typography:'h6'}}>
+               INVENTORY
+  
               </ListItem>
                }
         </List>
          
          
-            <Box display='flex' alignItems='right'>
+            <Box display='flex' alignItems='left'>
         <IconButton component={Link} to ='/basket' size='large' sx={{color: 'inherit'}}>
             <Badge badgeContent={itemCount} color='secondary'>
                 <ShoppingCart/>
             </Badge>
         </IconButton>
         
+        </Box>
         {user ? (
-          <Box>
-        <Box sx={{display:{ xs: 'none', sm: 'flex' } }} >
+
         <SignedinMenu/>
-        </Box >        
-        <IconButton size='large'  sx={{display: { xs: 'block', sm: 'none' },color: 'inherit'}}>
-        <AccountCircleIcon>
-        <SignedinMenu/>
-        </AccountCircleIcon>    
-        </IconButton>
-        </Box >
-        ) : (
-            <List sx={{display: 'flex'}}>
+    
+        ) : (<Box>
+            <List sx={{display:{ xs: 'none', sm: 'flex' } }}>
             {rightLinks.map(({title,path})=> (
                 <ListItem
                 component={NavLink}
@@ -155,16 +160,38 @@ export default function Header(props:any) {
                 >
                     {title.toUpperCase()}
                 </ListItem>
-            ))}           
-        
-        </List>
-        )}
+                
+            ))}</List>
+            <Box>
+            <Button
+        color='inherit'
+        onClick={handleClick}
+        sx={{ typography: 'h6' }}
+      ><Box sx={{display: { xs: 'flex ', sm: 'none' }, ml: 10} } >
+        <AccountCircleIcon/>
         </Box>
-          </Toolbar>
+      </Button>
+      <Menu
+        anchorEl={anchorEl1}
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={Fade}
+      >
+        {rightLinks.map(({title,path})=> (
+        <MenuItem onClick={handleClose}  component={NavLink}
+        to={path}
+        key={path}
+        sx={{color: 'inherit', typography:'h6'}}>{title.toUpperCase()}</MenuItem>
           
-        </AppBar>
-        <nav>
-          <Drawer
+        ))}
+        </Menu>
+
+
+            </Box>
+            </Box>
+        )}
+
+<Drawer
             container={container}
             variant="temporary"
             open={mobileOpen}
@@ -179,7 +206,9 @@ export default function Header(props:any) {
           >
             {drawer}
           </Drawer>
-        </nav>
+       
+</Toolbar>
+        </AppBar>
       </Box>
       
     );

@@ -1,10 +1,10 @@
-import { Button, Menu, Fade, MenuItem } from "@mui/material";
+import { Button, Menu, Fade, MenuItem, Box } from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { signOut } from "../../features/account/accountSlice";
 import { clearBasket } from "../../features/basket/basketSlice";
 import { useAppDispatch, useAppSelector } from "../store/configStore";
-
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 export default function SignedInMenu() {
   const dispatch = useAppDispatch();
   const { user } = useAppSelector(state => state.account);
@@ -25,8 +25,12 @@ export default function SignedInMenu() {
         color='inherit'
         onClick={handleClick}
         sx={{ typography: 'h6' }}
-      >
-        {user?.email}
+      ><Box sx={{display:{ xs: 'none', sm: 'flex' } }}>
+          {user?.email}
+        </Box> 
+        <Box sx={{display: { xs: 'flex ', sm: 'none' }, ml: 10} } >
+        <AccountCircleIcon/>
+        </Box>
       </Button>
       <Menu
         anchorEl={anchorEl}
