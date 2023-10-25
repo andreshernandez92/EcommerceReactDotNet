@@ -2,14 +2,10 @@ import ProductList from "./ProductList";
 import LoadingComponent from "../../app/layout/LoadingComponent";
 import { useAppDispatch, useAppSelector } from "../../app/store/configStore";
 import { setPageNumber, setProductParams } from "./catalogSlice";
-import ProductSearch from "./ProductSearch";
-import RadioButtonGroup from "../../app/components/RadioButton";
-import CheckboxButtons from "../../app/components/CheckboxButtons";
 import AppPagination from "../../app/components/AppPagination";
 import useProducts from "../../app/hooks/useProducts";
 import { Box ,FormControl,Grid, InputLabel, MenuItem, Paper, Select, SelectChangeEvent  } from "@mui/material";
-import { useState } from "react";
-import React from "react";
+
 
 const sortOptions = [
     {value:'name', label: 'Alphabetical'},

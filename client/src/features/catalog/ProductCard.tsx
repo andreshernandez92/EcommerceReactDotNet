@@ -16,25 +16,17 @@ export default function ProductCard({product}: Props){
 const {status} = useAppSelector(state=> state.basket);
 const dispatch = useAppDispatch();
 
-/** 
-    <CardHeader 
-    title={product.name}
-    titleTypographyProps={{
-        sx: {fontWeight:'strong', color: 'primary.main'}
-    }}
-    /> 
-     <Button component={Link} to={`/catalog/${product.id}`} size="small">View</Button>
-    */
-
 return(
 <Card >
       <CardMedia
         sx={{ height: '9.375rem' }}
         image={product.pictureUrl}
         title={product.name}
+        component={Link} 
+        to={`/catalog/${product.id}`}
       />
       <CardContent sx={{ padding: theme => `${theme.spacing(3, 5.25, 4)} !important` }} >
-      <Typography variant='h6' sx={{ marginBottom: 2 }}>
+      <Typography variant='h6' sx={{ marginBottom: 2 }} component={Link} to={`/catalog/${product.id}`}>
       {(product.name)}
         </Typography> 
         <Typography sx={{ marginBottom: 2 }}>
