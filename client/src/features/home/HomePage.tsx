@@ -1,10 +1,9 @@
 import { Typography } from "@mui/material";
+import ProductHero from "./ProductHero";
 
 export default function HomePage(){
 return(
-    <Typography variant='h2'>
-We are working on the  Homeopage
-    </Typography>
+<ProductHero/>
 
 )
 

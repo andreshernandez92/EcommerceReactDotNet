@@ -96,7 +96,7 @@ const open = Boolean(anchorEl1);
     return (
       
       <Box  display='flex' alignItems='center' sx={{ display: 'flex' }}>
-        <AppBar component="nav" position='static' sx={{mb: 2}}>
+        <AppBar component="nav" position='static' sx={{mb: 0}}>
           <Toolbar>
             <IconButton
               color="inherit"
