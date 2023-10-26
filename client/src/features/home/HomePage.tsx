@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 export default function HomePage(){
 return(
     <Typography variant='h2'>
-        Home Page
+We are working on the  Homeopage
     </Typography>
 
 )
