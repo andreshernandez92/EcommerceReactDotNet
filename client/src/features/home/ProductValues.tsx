@@ -22,7 +22,7 @@ function ProductValues() {
       <Container sx={{ mt: 15, mb: 30, display: 'flex', position: 'relative' }}>
         <Box
           component="img"
-          src="../../app/utils/images/appCurvyLines.png"
+          src="https://github.com/andreshernandez92/EcommerceReactDotNet/blob/9a5c3a9828ed8ce444e369e148d71ad0016399f7/client/src/app/utils/images/appCurvyLines.png"
           alt="curvy lines"
           sx={{ pointerEvents: 'none', position: 'absolute', top: -180 }}
         />

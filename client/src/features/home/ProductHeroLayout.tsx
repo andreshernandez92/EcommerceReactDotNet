@@ -3,7 +3,7 @@ import { Theme, styled } from '@mui/material/styles';
 import { SxProps } from '@mui/system';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 const ProductHeroLayoutRoot = styled('section')(({ theme }) => ({
   color: theme.palette.common.white,
   position: 'relative',
@@ -47,12 +47,6 @@ export default function ProductHeroLayout(
           alignItems: 'center',
         }}
       >
-        <img
-          src="/static/themes/onepirate/productHeroWonder.png"
-          alt="wonder"
-          width="147"
-          height="80"
-        />
         {children}
         <Box
           sx={{
@@ -67,14 +61,7 @@ export default function ProductHeroLayout(
           }}
         />
         <Background sx={sxBackground} />
-        <Box
-          component="img"
-          src="/static/themes/onepirate/productHeroArrowDown.png"
-          height="16"
-          width="12"
-          alt="arrow down"
-          sx={{ position: 'absolute', bottom: 32 }}
-        />
+        <ArrowDownwardIcon  sx={{ position: 'absolute', bottom: 32 }} height="16" width="12"/>
       </Container>
     </ProductHeroLayoutRoot>
   );

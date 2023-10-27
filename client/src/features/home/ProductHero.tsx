@@ -1,11 +1,10 @@
-import * as React from 'react';
 import Button from '../../app/components/AppButton';
 import ProductHeroLayout from './ProductHeroLayout';
 import { Typography } from '@mui/material';
 
 const backgroundImage =
-  'https://images.unsplash.com/photo-1534854638093-bada1813ca19?auto=format&fit=crop&w=1400';
-
+  'https://github.com/andreshernandez92/EcommerceReactDotNet/blob/master/client/src/app/utils/images/heroimage.png';
+  
 export default function ProductHero() {
   return (
     <ProductHeroLayout
