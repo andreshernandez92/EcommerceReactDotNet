@@ -113,7 +113,7 @@ const open = Boolean(anchorEl1);
               component={NavLink}  to='/'>
                 ECOMMERCEREACTDOTNET
             </Typography>
-            <Paper sx={{}}>
+            <Paper >
                 <ProductSearch/>
             </Paper>
             <List sx={{display:{ xs: 'none', sm: 'flex' } }}>
@@ -166,8 +166,8 @@ const open = Boolean(anchorEl1);
             <Button
         color='inherit'
         onClick={handleClick}
-        sx={{ typography: 'h6' }}
-      ><Box sx={{display: { xs: 'flex ', sm: 'none' }, ml: 10} } >
+        sx={{ typography: 'h6', display: { xs: 'flex ', sm: 'none' }, ml: 10 }}
+      ><Box >
         <AccountCircleIcon/>
         </Box>
       </Button>

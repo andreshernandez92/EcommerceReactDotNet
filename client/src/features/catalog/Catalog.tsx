@@ -28,57 +28,57 @@ if(!filtersLoaded) return <LoadingComponent message="Loading Products..."/>
 <Box>
   <Grid container spacing={2}>
     <Grid item xs={12} sm={6} md={4}>
-      <FormControl sx={{ m: 1, minWidth: 80 }}>
+      <FormControl sx={{ m: 1, minWidth: 120 }}>
         <InputLabel id="OrderBy">Order By</InputLabel>
         <Select
           labelId="OrderBy"
           id="OrderBy"
           value={productParams.orderBy}
-          onChange={(e)=> dispatch(setProductParams({orderBy: e.target.value}))}
+          onChange={(e) => dispatch(setProductParams({ orderBy: e.target.value }))}
           autoWidth
           label="Order By"
         >
-            {sortOptions.map(({value,label})=> (
-                <MenuItem value={value}>{label}</MenuItem>
-            ))}
+          {sortOptions.map(({ value, label }) => (
+            <MenuItem value={value}>{label}</MenuItem>
+          ))}
         </Select>
-      </FormControl> 
+      </FormControl>
     </Grid>
     <Grid item xs={12} sm={6} md={4}>
-      <FormControl sx={{ m: 1, minWidth: 80 }}>
+      <FormControl sx={{ m: 1, minWidth: 120 }}>
         <InputLabel id="Brands">Brands</InputLabel>
         <Select
           labelId="Brands"
           id="Brands"
           value={productParams.brands}
-          onChange={(items) => dispatch(setProductParams({brands: items.target.value}))}
+          onChange={(items) => dispatch(setProductParams({ brands: items.target.value }))}
           autoWidth
           label="Brands"
         >
-            <MenuItem value=""><em>None</em></MenuItem>
-            {brands.map((item)=> (
-                <MenuItem value={item}>{item}</MenuItem>
-            ))}
+          <MenuItem value=""><em>None</em></MenuItem>
+          {brands.map((item) => (
+            <MenuItem value={item}>{item}</MenuItem>
+          ))}
         </Select>
       </FormControl>
     </Grid>
     <Grid item xs={12} sm={6} md={4}>
-      <FormControl sx={{ m: 1, minWidth: 80 }}>
+      <FormControl sx={{ m: 1, minWidth: 120 }}>
         <InputLabel id="types">Types</InputLabel>
         <Select
           labelId="types"
           id="types"
           value={productParams.types}
-          onChange={(items) => dispatch(setProductParams({types: items.target.value}))}
+          onChange={(items) => dispatch(setProductParams({ types: items.target.value }))}
           autoWidth
-          label="types"
+          label="Types"
         >
-            <MenuItem value=""><em>None</em></MenuItem>
-            {types.map((item)=> (
-                <MenuItem value={item}>{item}</MenuItem>
-            ))}
+          <MenuItem value=""><em>None</em></MenuItem>
+          {types.map((item) => (
+            <MenuItem value={item}>{item}</MenuItem>
+          ))}
         </Select>
-      </FormControl>  
+      </FormControl>
     </Grid>
   </Grid>
 </Box>

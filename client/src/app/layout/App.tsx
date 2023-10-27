@@ -9,6 +9,7 @@ import { fetchBasketAsync } from "../../features/basket/basketSlice";
 import { fetchCurrentUser } from "../../features/account/accountSlice";
 import HomePage from "../../features/home/HomePage";
 import { useAppDispatch } from "../store/configStore";
+import Footer from "./Footer";
 
 
 
@@ -56,7 +57,7 @@ function App() {
               <Outlet />
             </Container>
       }
-
+<Footer/>
     </ThemeProvider>
   );
 }
