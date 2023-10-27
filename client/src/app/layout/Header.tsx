@@ -11,8 +11,6 @@ import React from "react";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 import ProductSearch from "../../features/catalog/ProductSearch";
-import { signOut } from "../../features/account/accountSlice";
-import { clearBasket } from "../../features/basket/basketSlice";
 const midLinks = [
 {title: 'Homepage', path: '/'},
 {title: 'catalog', path: '/catalog'},

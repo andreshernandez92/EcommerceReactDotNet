@@ -6,11 +6,10 @@ import Header from "./Header";
 import 'react-toastify/dist/ReactToastify.css';
 import LoadingComponent from "./LoadingComponent";
 import { fetchBasketAsync } from "../../features/basket/basketSlice";
-import { fetchCurrentUser } from "../../features/account/accountSlice";
 import HomePage from "../../features/home/HomePage";
 import { useAppDispatch } from "../store/configStore";
 import Footer from "./Footer";
-
+import { fetchCurrentUser } from "../../features/account/accountSlice";
 
 
 function App() {

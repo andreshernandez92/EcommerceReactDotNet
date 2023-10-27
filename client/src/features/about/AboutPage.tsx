@@ -1,9 +1,16 @@
-import React from 'react';
 import { Container, Grid, Typography, Paper } from '@mui/material';
 
 const AboutPage = () => {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg"   sx={{
+
+  
+      // Margin
+      mx: 2, // Horizontal margin
+      my: 3, // Vertical margin
+  
+
+    }}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Typography variant="h4" align="center" gutterBottom>
@@ -11,7 +18,7 @@ const AboutPage = () => {
           </Typography>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Paper elevation={3} style={{ padding: '2rem' }}>
+          <Paper elevation={3} style={{ padding: "2rem" }}>
             <Typography variant="h6" gutterBottom>
               Our Story
             </Typography>

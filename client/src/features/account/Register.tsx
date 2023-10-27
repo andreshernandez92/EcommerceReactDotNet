@@ -8,10 +8,10 @@ import { LoadingButton } from '@mui/lab';
 import { LockOutlined } from '@mui/icons-material';
 import { toast } from 'react-toastify';
 export default function Register() {
-  const navigate = useNavigate();
   const {register,setError ,handleSubmit, formState: {isSubmitting, errors, isValid}}= useForm({
     mode:'all'
   })
+  const navigate = useNavigate();
 
 function handleApiErrors(errors:any){
     console.log(errors)
