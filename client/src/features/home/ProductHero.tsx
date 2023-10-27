@@ -3,7 +3,7 @@ import ProductHeroLayout from './ProductHeroLayout';
 import { Typography } from '@mui/material';
 
 const backgroundImage =
-  'https://github.com/andreshernandez92/EcommerceReactDotNet/blob/master/client/src/app/utils/images/heroimage.png';
+  'https://github.com/andreshernandez92/EcommerceReactDotNet/blob/master/client/src/app/utils/images/heroimage.png?raw=true';
   
 export default function ProductHero() {
   return (
@@ -21,7 +21,7 @@ export default function ProductHero() {
         alt="increase priority"
       />
       <Typography color="inherit" align="center" variant="h2" >
-        Upgrade your Sundays
+        ECOMMERCEDOTNET STORE
       </Typography>
       <Typography
         color="inherit"
@@ -29,7 +29,7 @@ export default function ProductHero() {
         variant="h5"
         sx={{ mb: 4, mt: { xs: 4, sm: 10 } }}
       >
-        Enjoy secret offers up to -70% off the best luxury hotels every Sunday.
+       Sign up for Ecommercedotnet today!
       </Typography>
       <Button
         color="secondary"
@@ -41,9 +41,8 @@ export default function ProductHero() {
       >
         Register
       </Button>
-      <Typography variant="body2" color="inherit" sx={{ mt: 2 }}>
-        Discover the experience
-      </Typography>
+      <Typography variant="body1" color="inherit" sx={{ mt: 2 }}>
+      Ecommercedotnet is your one-stop shop for all things e-commerce.</Typography>
     </ProductHeroLayout>
   );
 }
