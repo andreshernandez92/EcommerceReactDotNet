@@ -69,13 +69,13 @@ function ProductCTA() {
               right: 0,
               bottom: 0,
               width: '100%',
-              background: 'url(/static/themes/onepirate/productCTAImageDots.png)',
+              background: 'https://github.com/andreshernandez92/EcommerceReactDotNet/blob/master/client/src/app/utils/images/productCTAImageDots.png',
             }}
           />
           <Box
             component="img"
-            src="https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?auto=format&fit=crop&w=750"
-            alt="call to action"
+            src="https://github.com/andreshernandez92/EcommerceReactDotNet/blob/master/client/src/app/utils/images/ecommercesite.jpg?raw=true"
+            alt="ecommerce image"
             sx={{
               position: 'absolute',
               top: -28,

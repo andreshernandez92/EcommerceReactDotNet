@@ -2,6 +2,7 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import {  Typography } from "@mui/material";
 import LoyaltyIcon from '@mui/icons-material/Loyalty';
+import { Link } from 'react-router-dom';
 function ProductSmokingHero() {
   return (
     <Container
@@ -16,13 +17,14 @@ function ProductSmokingHero() {
           py: 2,
           px: 5,
         }}
+        component={Link} to='/contact'
       >
         <Typography variant="h4" component="span">
-          Got any questions? Need help?
+         Got any questions?
         </Typography>
       </Button>
       <Typography variant="subtitle1" sx={{ my: 3 }}>
-        We are here to help. Get in touch!
+        Contact Us!
       </Typography>
       <LoyaltyIcon    sx={{ width: 100 }}/>
     </Container>

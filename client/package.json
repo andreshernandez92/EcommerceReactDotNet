@@ -5,10 +5,12 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@fontsource/open-sans": "^5.0.17",
+    "@fontsource/poppins": "^5.0.8",
     "@hookform/resolvers": "^3.0.0",
     "@mui/icons-material": "^5.14.14",
     "@mui/lab": "^5.0.0-alpha.122",
-    "@mui/material": "^5.14.14",
+    "@mui/material": "^5.14.15",
     "@reduxjs/toolkit": "^1.9.3",
     "@stripe/react-stripe-js": "^2.1.0",
     "@stripe/stripe-js": "^1.52.0",

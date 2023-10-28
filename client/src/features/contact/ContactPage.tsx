@@ -3,7 +3,10 @@ import { Container, Grid, Typography, Paper, TextField, Button } from '@mui/mate
 
 const ContactPage = () => {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" sx={{// Margin
+      mx: 2, // Horizontal margin
+      my: 3, // Vertical margin
+   }}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Typography variant="h4" align="center" gutterBottom>

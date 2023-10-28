@@ -34,7 +34,7 @@ function ProductValues() {
                 <SupportAgentIcon   sx={{width: 100, height: 55 }}/>
         
               <Typography variant="h6" sx={{ my: 5 }}>
-              Customer focus
+             <strong> Customer focus</strong>
               </Typography>
               <Typography variant="h5">
                 {
@@ -51,7 +51,7 @@ function ProductValues() {
                 <BiotechIcon  sx={{ width: 100,height: 55 }}/>
          
               <Typography variant="h6" sx={{ my: 5 }}>
-                Innovation
+              <strong>Innovation</strong>
               </Typography>
               <Typography variant="h5">
                 {
@@ -65,7 +65,7 @@ function ProductValues() {
             <Box sx={item}>
             <TvIcon sx={{ height: 55 , width: 100 } }/>
               <Typography variant="h6" sx={{ my: 5 }}>
-                Exclusive rates
+              <strong>Exclusive rates</strong>
               </Typography>
               <Typography variant="h5">
                 {'We are transparent with our customers about everything from our pricing to our shipping policies.'}
