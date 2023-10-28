@@ -12,8 +12,10 @@ namespace API.DTOs
         public string Name { get; set; }
         [Required]
         public string Description { get; set; }
-        public decimal Price { get; set; }
-        public IFormFile File { get; set; }
+        [Required]
+        [Range(100, Double.PositiveInfinity)]
+        public long Price { get; set; }
+        public Pictureurl  { get; set; }
         [Required]
         public string Type { get; set; }
         [Required]

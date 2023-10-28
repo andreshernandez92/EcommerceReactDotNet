@@ -12,7 +12,7 @@ namespace API.Entities
 
         public string Description { get; set; }
 
-        public decimal Price { get; set; }
+        public long Price { get; set; }
 
         public string PictureUrl { get; set; }
 
@@ -21,5 +21,7 @@ namespace API.Entities
         public string Brand { get; set; }
 
         public int QuantityStock { get; set; }
+
+        public string PublicId { get; set; }
     }
 }

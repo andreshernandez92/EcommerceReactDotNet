@@ -22,27 +22,26 @@ namespace API.Services
 
             var intent = new PaymentIntent();
 
-            var subtotal = basket.Items.Sum(item=> item.Quantity * item.Product.Price);
-            var deliveryFee = subtotal > 100 ? 0 : 50;
+            var subtotal = basket.Items.Sum(item => item.Quantity * item.Product.Price);
+            var deliveryFee = subtotal > 10000 ? 0 : 500;
 
-            if(string.IsNullOrEmpty(basket.PaymentIntentId))
+           if (string.IsNullOrEmpty(basket.PaymentIntentId))
             {
-            var options = new PaymentIntentCreateOptions
-            {
-                Amount = Decimal.ToInt64(subtotal*100) + Decimal.ToInt64(deliveryFee*100),
-                Currency = "usd",
-                PaymentMethodTypes= new List<string> {"card"}
-            };
-            intent = await service.CreateAsync(options);
-
-            }
-        else
-            {
-            var options = new PaymentIntentUpdateOptions
+                var options = new PaymentIntentCreateOptions
                 {
-                Amount = Decimal.ToInt64(subtotal*100) + Decimal.ToInt64(deliveryFee*100)
+                    Amount = subtotal + deliveryFee,
+                    Currency = "usd",
+                    PaymentMethodTypes = new List<string> {"card"}
                 };
-            await service.UpdateAsync(basket.PaymentIntentId,options);
+                intent = await service.CreateAsync(options);
+            } 
+            else 
+            {
+                var options = new PaymentIntentUpdateOptions
+                {
+                    Amount = subtotal + deliveryFee
+                };
+                await service.UpdateAsync(basket.PaymentIntentId, options);
             }
         return intent;
         }

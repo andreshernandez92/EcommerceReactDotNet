@@ -17,16 +17,16 @@ namespace API.Entities.OrderAggregate
 
         public List<OrderItem> OrderItems  { get; set; }
 
-        public decimal Subtotal { get; set; }
+        public long Subtotal { get; set; }
 
-        public decimal DeliveryFee { get; set; }
+        public long  DeliveryFee { get; set; }
 
         public OrderStatus OrderStatus { get; set; } = OrderStatus.Pending;
 
         public string PaymentIntentId { get; set; }
 
 
-        public decimal GetTotal()
+        public long GetTotal()
         {
             return Subtotal + DeliveryFee;
         }

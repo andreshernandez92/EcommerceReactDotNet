@@ -1,22 +1,43 @@
-import { Container, Divider, Paper, Typography } from "@mui/material";
-import { useLocation } from "react-router-dom";
+import { Button, Container, Divider, Grid, Paper, Typography } from "@mui/material";
+import { Link, useLocation } from "react-router-dom";
 
 export default function ServerError() {
     const {state} = useLocation();
 
     return (
-        <Container component={Paper}>
+        <Grid container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        style={{ height: '100vh' }}>
             {state?.error ? (
                 <>
-                    <Typography gutterBottom variant="h3" color='secondary'>
-                            {state.error.title}
-                    </Typography>
-                    <Divider />
-                    <Typography variant="body1">{state.error.detail || 'Internal server error'}</Typography>
-                </>
+      <Typography variant="h1">   {state.error.title}</Typography>
+      <Typography variant="h4">Server Error</Typography>
+      <Typography variant="body1">
+      state.error.detail || 'Internal server error'
+      </Typography>
+      </>
+               
             ) : (
-                <Typography gutterBottom variant='h5'>Server error</Typography>
+                <>
+                <Typography variant="h1">500</Typography>
+                <Typography variant="h4">Server Error</Typography>
+                <Typography variant="body1">
+                  Sorry, something went wrong on our end.
+                </Typography>
+                </>
             )}
-        </Container>
+             <Button
+        variant="contained"
+        color="primary"
+        component={Link}
+        to="/"
+        style={{ marginTop: '20px' }}
+      >
+        Go to Home
+      </Button>
+      </Grid>
+   
     )
 }

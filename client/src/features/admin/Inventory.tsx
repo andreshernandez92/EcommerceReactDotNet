@@ -22,7 +22,7 @@ import {
   import { removeProduct, setPageNumber } from "../catalog/catalogSlice";
   import agent from "../../app/api/agent";
   import ProductForm from "./ProductForm";
-  
+  import { currencyFormat } from "../../app/utils/util";
   export default function Inventory() {
     const { products, metaData } = useProducts();
     const dispatch = useAppDispatch();
@@ -80,7 +80,7 @@ import {
                   secondary={
                     <span>
                       <Typography variant="body2">
-                        Price: {product.price}
+                        Price: {currencyFormat(product.price)}
                       </Typography>
                       <Typography variant="body2">
                         Type: {product.type}

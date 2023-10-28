@@ -18,22 +18,16 @@ interface Props {
 }
 
 export default function ProductForm({ product, cancelEdit }: Props) {
-    const { control, reset, handleSubmit, watch, formState: { isDirty, isSubmitting } } = useForm({
+    const { control, reset, handleSubmit, watch, formState: {  isSubmitting } } = useForm({
         resolver: yupResolver(validationSchema)
     });
     const { brands, types } = useProducts();
-    const watchFile = watch('file', null);
+    
     const dispatch = useAppDispatch();
-
-    useEffect(() => {
-        if (product && !watchFile && !isDirty) reset(product);
-        return () => {
-            if (watchFile) URL.revokeObjectURL(watchFile.preview);
-        }
-    }, [product, reset, watchFile, isDirty])
 
     async function handleSubmitData(data: FieldValues) {
         try {
+            console.log(data)
             let response: Product;
             if (product) {
                 response = await agent.Admin.updateProduct(data);
@@ -74,7 +68,7 @@ export default function ProductForm({ product, cancelEdit }: Props) {
                     </Grid>
                     <Grid item xs={12}>
                         <Box display='flex' justifyContent='space-between' alignItems='center'>
-                        <AppTextInput control={control} name='file' label='Picture URL' />
+                        <AppTextInput control={control} name='pictureurl' label='pictureurl' />
                         </Box>
 
                     </Grid>

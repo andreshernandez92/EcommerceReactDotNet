@@ -19,13 +19,13 @@ namespace API.DTOs
         public DateTime OrderDate { get; set; }
         public List<OrderItemDto> OrderItems  { get; set; }
 
-        public decimal Subtotal { get; set; }
+        public long Subtotal { get; set; }
 
-        public decimal DeliveryFee { get; set; }
+        public long DeliveryFee { get; set; }
 
         public string OrderStatus { get; set; } 
 
-        public decimal Total { get; set; }
+        public long Total { get; set; }
 
     }
 }
