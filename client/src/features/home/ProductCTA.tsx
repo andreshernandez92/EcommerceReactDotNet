@@ -82,7 +82,7 @@ function ProductCTA() {
               left: -28,
               right: 0,
               bottom: 0,
-              width: '100%',
+              width: '80%',
               maxWidth: 600,
             }}
           />
