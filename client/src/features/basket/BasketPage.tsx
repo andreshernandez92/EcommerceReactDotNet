@@ -1,33 +1,25 @@
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Grid, Typography, Box } from "@mui/material";
 import { useAppSelector } from "../../app/store/configStore";
 import BasketSummary from "./BasketSumary";
 import BasketTable from "./BasketTable";
 
-export default function BasketPage(){
-  const {basket} =useAppSelector(state => state.basket);
-  
-if(!basket) return <Typography variant='h3'> Your basket is empty</Typography>
+export default function BasketPage() {
+  const { basket } = useAppSelector((state) => state.basket);
 
+  if (!basket) return <Typography variant="h3">Your basket is empty</Typography>;
 
-
-return(
-  <>
-   <BasketTable items={basket.items}/>
-  <Grid container>
-    <Grid item xs={6}/>
-    <Grid item xs={6}>
-      <BasketSummary/>
-      <Button href="/checkout"
-      variant='contained'
-      size='large'
-      fullWidth
-      >
-Checkout
-      </Button>
-    </Grid>
-  </Grid>
-  </>
-
-);
-
+  return (
+    <>
+      <BasketTable items={basket.items} />
+      <Grid container>
+        <Grid item xs={6} />
+        <Grid item xs={6}>
+          <BasketSummary />
+          <Button href="/checkout" variant="contained" size="large" fullWidth>
+            Checkout
+          </Button>
+        </Grid>
+      </Grid>
+    </>
+  );
 }

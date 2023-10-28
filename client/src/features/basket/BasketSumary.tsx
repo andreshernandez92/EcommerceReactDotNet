@@ -1,40 +1,34 @@
-import { TableContainer, Paper, Table, TableBody, TableRow, TableCell } from "@mui/material";
+import { Card, CardContent, Typography } from "@mui/material";
 import { useAppSelector } from "../../app/store/configStore";
+
 interface Props {
-    subtotal?: number;
+  subtotal?: number;
 }
 
-export default function BasketSummary({subtotal}: Props) {
-  
-    const {basket} = useAppSelector(state => state.basket);
-    if (subtotal === undefined) 
+export default function BasketSummary({ subtotal }: Props) {
+  const { basket } = useAppSelector((state) => state.basket);
+  if (subtotal === undefined)
     subtotal = basket?.items.reduce((sum, item) => sum + (item.quantity * item.price), 0) ?? 0;
-    const deliveryFee = subtotal > 100 ? 0 : 50;
-    return (
-        <>
-            <TableContainer component={Paper} variant={'outlined'}>
-                <Table>
-                    <TableBody>
-                        <TableRow>
-                            <TableCell colSpan={2}>Subtotal</TableCell>
-                            <TableCell align="right">${subtotal.toFixed(2)}</TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TableCell colSpan={2}>Delivery fee*</TableCell>
-                            <TableCell align="right">${(deliveryFee.toFixed(2))}</TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TableCell colSpan={2}>Total</TableCell>
-                            <TableCell align="right">${(subtotal+deliveryFee).toFixed(2)}</TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TableCell>
-                                <span style={{ fontStyle: 'italic' }}>*Orders over $100 qualify for free delivery</span>
-                            </TableCell>
-                        </TableRow>
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </>
-    )
+  const deliveryFee = subtotal > 100 ? 0 : 50;
+
+  return (
+    <>
+      <Card variant="outlined">
+        <CardContent>
+          <Typography variant="h6" component="div">
+            Subtotal: ${subtotal.toFixed(2)}
+          </Typography>
+          <Typography variant="h6" component="div">
+            Delivery fee*: ${deliveryFee.toFixed(2)}
+          </Typography>
+          <Typography variant="h6" component="div">
+            Total: ${(subtotal + deliveryFee).toFixed(2)}
+          </Typography>
+          <Typography color="text.secondary" style={{ fontStyle: "italic" }}>
+            *Orders over $100 qualify for free delivery
+          </Typography>
+        </CardContent>
+      </Card>
+    </>
+  );
 }
