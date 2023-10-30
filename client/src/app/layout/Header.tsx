@@ -62,8 +62,19 @@ const open = Boolean(anchorEl1);
     const itemCount = basket?.items.reduce((sum,item)=> sum + item.quantity, 0);
     const drawer = (
         
-      <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-        <Typography variant="h6" sx={{ my: 2, ...navStyles }} component={NavLink}  to='/' >
+      <Box onClick={handleDrawerToggle} sx={{
+        backgroundColor: 'background.paper', // Set your preferred background color
+        color: 'text.primary', // Set your preferred text color
+        textAlign: 'center',
+        width: drawerWidth
+      }}>
+        <Typography variant="h6" sx={{ fontSize: {
+      xs: '1rem', // Adjust the font size for extra small screens (mobile)
+      sm: '1rem', // Adjust the font size for small screens
+      md: '1rem', // Adjust the font size for medium screens
+      lg: '1rem', // Adjust the font size for large screens
+      xl: '2rem', // Adjust the font size for extra large screens
+    },my: 2 }} component={NavLink}  to='/' >
         ECOMMERCEREACTDOTNET
         </Typography>
         <Divider />
@@ -71,8 +82,8 @@ const open = Boolean(anchorEl1);
 
           {midLinks.map(({title,path}) => (
             <ListItem component={NavLink} to={path} key={path} disablePadding>
-              <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText > {title.toUpperCase()}</ListItemText>
+              <ListItemButton >
+              <Typography sx={{ ...navStyles}}> {title.toUpperCase()}</Typography>
               </ListItemButton>
             </ListItem>
           ))}
@@ -80,10 +91,8 @@ const open = Boolean(anchorEl1);
           {user &&
             <ListItem component={NavLink}
             to={'/inventory'}
-            sx={navStyles}>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText > INVENTORY</ListItemText>
-              </ListItemButton>
+            >
+            <Typography sx={{ ...navStyles}}>INVENTORY</Typography>  
             </ListItem>
              }
         </List>
@@ -107,7 +116,7 @@ const open = Boolean(anchorEl1);
             </IconButton>
             <Typography
               variant="h6"
-              sx={{ flexGrow: .4, display: { xs: 'none', sm: 'block' }, ...navStyles}}
+              sx={{ flexGrow: .4, display: { xs: 'none', sm: 'block' },color:'white'}}
               component={NavLink}  to='/'>
                 ECOMMERCEREACTDOTNET
             </Typography>
@@ -120,7 +129,7 @@ const open = Boolean(anchorEl1);
                 component={NavLink}
                 to={path}
                 key={path}
-                sx={{color: 'inherit', typography:'h6'}}
+                sx={{ ...navStyles}}
                 >
                     {title.toUpperCase()}
                 </ListItem>
@@ -150,21 +159,21 @@ const open = Boolean(anchorEl1);
         ) : (<Box>
             <List sx={{display:{ xs: 'none', sm: 'flex' } }}>
             {rightLinks.map(({title,path})=> (
-                <ListItem
+                <Typography
                 component={NavLink}
                 to={path}
                 key={path}
-                sx={{color: 'inherit', typography:'h6'}}
+                sx={{...navStyles  }}
                 >
                     {title.toUpperCase()}
-                </ListItem>
+                </Typography>
                 
             ))}</List>
             <Box>
             <Button
         color='inherit'
         onClick={handleClick}
-        sx={{ typography: 'h6', display: { xs: 'flex ', sm: 'none' }, ml: 10 }}
+        sx={{ display: { xs: 'flex ', sm: 'none' }, ml: 10, ...navStyles }}
       ><Box >
         <AccountCircleIcon/>
         </Box>
@@ -176,12 +185,10 @@ const open = Boolean(anchorEl1);
         TransitionComponent={Fade}
       >
         {rightLinks.map(({title,path})=> (
-        <MenuItem onClick={handleClose}  component={NavLink}
+        <Typography onClick={handleClose}  component={NavLink}
         to={path}
         key={path}
-        sx={{color: 'inherit', typography:'h6'}}>{title.toUpperCase()}</MenuItem>
-          
-        ))}
+        sx={{...navStyles}}>{title.toUpperCase()}</Typography>))}
         </Menu>
 
 
@@ -198,7 +205,10 @@ const open = Boolean(anchorEl1);
               keepMounted: true, // Better open performance on mobile.
             }}
             sx={{
+              backgroundColor: 'background.paper', // Set your preferred background color
+              
               display: { xs: 'block', sm: 'none' },
+              ...navStyles,
               '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
             }}
           >

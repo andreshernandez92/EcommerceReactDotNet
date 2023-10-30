@@ -15,7 +15,8 @@ export default function ServerError() {
       <Typography variant="h1">   {state.error.title}</Typography>
       <Typography variant="h4">Server Error</Typography>
       <Typography variant="body1">
-      state.error.detail || 'Internal server error'
+        {console.log(state.error)}
+      {state.error.detail || 'Internal server error'}
       </Typography>
       </>
                

@@ -56,6 +56,7 @@ const theme = createTheme({
     },
     h2: {
       fontFamily: 'Poppins, sans-serif',
+      
     },
     h3: {
       fontFamily: 'Poppins, sans-serif',

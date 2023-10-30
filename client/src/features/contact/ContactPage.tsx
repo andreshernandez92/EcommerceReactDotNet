@@ -1,7 +1,17 @@
 import React from 'react';
-import { Container, Grid, Typography, Paper, TextField, Button } from '@mui/material';
+import {
+  Container,
+  Grid,
+  Typography,
+  Paper,
+  TextField,
+  Button,
+} from '@mui/material';
+import AppSnackbar from '../../app/components/AppSnackbar';
 
 const ContactPage = () => {
+  const [snackbarOpen, setSnackbarOpen] = React.useState(false);
+  const [snackbarMessage, setSnackbarMessage] = React.useState('');
   return (
     <Container maxWidth="lg" sx={{// Margin
       mx: 2, // Horizontal margin
@@ -55,20 +65,31 @@ const ContactPage = () => {
                 fullWidth
                 margin="normal"
               />
-              <Button
-                variant="contained"
-                color="primary"
-                fullWidth
-                size="large"
-              >
-                Send Message
-              </Button>
+          <Button
+          variant="contained"
+          color="primary"
+          fullWidth
+          size="large"
+          onClick={() => {
+            setSnackbarMessage('Your message has been sent!');
+            setSnackbarOpen(true);
+            // You can also perform other actions (e.g., sending the message) here
+          }}
+        >
+          Send Message
+        </Button>
             </form>
           </Paper>
         </Grid>
       </Grid>
+      <AppSnackbar
+        open={snackbarOpen}
+        message={snackbarMessage}
+        onClose={() => setSnackbarOpen(false)}
+      />
     </Container>
   );
+
 };
 
 export default ContactPage;

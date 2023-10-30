@@ -5,7 +5,7 @@ export const validationSchema = yup.object({
     brand: yup.string().required(),
     type: yup.string().required(),
     price: yup.number().required().moreThan(100),
-    quantityInStock: yup.number().required().min(0),
+    quantityStock: yup.number().required().min(0),
     description: yup.string().required(),
-    pictureurl: yup.string().required()
+    pictureUrl: yup.string().required()
 })

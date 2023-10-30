@@ -59,7 +59,7 @@ namespace API.Controllers
 
         [Authorize(Roles= "Admin")]
         [HttpPost]
-        public async Task<ActionResult<Product>> CreateProduct(CreateProductDto productDto)
+        public async Task<ActionResult<Product>> CreateProduct([FromForm] CreateProductDto productDto)
         {
             
             var product = _mapper.Map<Product>(productDto);

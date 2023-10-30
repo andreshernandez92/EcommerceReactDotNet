@@ -1,4 +1,4 @@
-import { Typography, Grid, Divider, Table, TableBody, TableContainer, TableRow, TableCell, TextField } from "@mui/material";
+import { Typography, Grid, Divider, Table, TableBody, TableContainer, TableRow, TableCell, TextField, Paper } from "@mui/material";
 import { useParams } from "react-router-dom";
 import {useEffect, useState} from 'react';
 import NotFound from "../../app/errors/NotFound";
@@ -48,7 +48,15 @@ if(!product) return <NotFound/>
 
 
     return(
-        <Grid container spacing={6}>
+        <Grid container spacing={6} sx={{
+
+  
+            // Margin
+            mx: 2, // Horizontal margin
+            my: 3, // Vertical margin
+        
+      
+          }}>
         <Grid item xs={12} sm={6}>
             <img src={product.pictureUrl} alt={product.name} style={{width:'100%'}}/>
         </Grid>
@@ -86,6 +94,7 @@ if(!product) return <NotFound/>
             <Grid container spacing={2}>
           
                 <Grid item xs={12} sm={6}>
+                    <Paper>
                     <TextField
                     onChange={handleInputChange}
                     variant='outlined'
@@ -94,6 +103,7 @@ if(!product) return <NotFound/>
                     fullWidth
                     value={quantity}
                     />
+                    </Paper>
                 </Grid>
     
   

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Button from '../../app/components/AppButton';
 import ProductHeroLayout from './ProductHeroLayout';
 import { Typography } from '@mui/material';
@@ -20,9 +21,21 @@ export default function ProductHero() {
         src={backgroundImage}
         alt="increase priority"
       />
-      <Typography color="inherit" align="center" variant="h2" >
-        ECOMMERCEDOTNET STORE
-      </Typography>
+<Typography
+  color="inherit"
+  align="center"
+  variant="h2"
+  sx={{
+    fontSize: {
+      xs: '2rem', // Adjust the font size for extra small screens (mobile)
+      sm: '3rem', // Adjust the font size for small screens
+      md: '4rem', // Adjust the font size for medium screens
+      lg: '5rem', // Adjust the font size for large screens
+      xl: '6rem', // Adjust the font size for extra large screens
+    }}}
+>
+  ECOMMERCEDOTNET STORE
+</Typography>
       <Typography
         color="inherit"
         align="center"
@@ -35,8 +48,8 @@ export default function ProductHero() {
         color="secondary"
         variant="contained"
         size="large"
-        component="a"
-        href=""
+        component={Link}
+        to="/register"
         sx={{ minWidth: 200 }}
       >
         Register
@@ -46,3 +59,5 @@ export default function ProductHero() {
     </ProductHeroLayout>
   );
 }
+
+

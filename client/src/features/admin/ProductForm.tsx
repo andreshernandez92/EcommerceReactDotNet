@@ -17,23 +17,33 @@ interface Props {
     cancelEdit: () => void;
 }
 
+
+
 export default function ProductForm({ product, cancelEdit }: Props) {
-    const { control, reset, handleSubmit, watch, formState: {  isSubmitting } } = useForm({
+    const { control, reset, handleSubmit, watch, formState: { isDirty, isSubmitting } } = useForm({
         resolver: yupResolver(validationSchema)
     });
     const { brands, types } = useProducts();
-    
+    const watchFile = watch('pictureurl', null);
     const dispatch = useAppDispatch();
+    
+    useEffect(() => {
+        if (product && !watchFile && !isDirty) reset(product);
+    }, [product, reset, watchFile, isDirty])
 
     async function handleSubmitData(data: FieldValues) {
         try {
-            console.log(data)
+           
             let response: Product;
+            
             if (product) {
                 response = await agent.Admin.updateProduct(data);
             } else {
+                console.log(data)
                 response = await agent.Admin.createProduct(data);
+              
             }
+            
             dispatch(setProduct(response));
             cancelEdit();
         } catch (error) {
@@ -61,23 +71,24 @@ export default function ProductForm({ product, cancelEdit }: Props) {
                         <AppTextInput type='number' control={control} name='price' label='Price' />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <AppTextInput type='number' control={control} name='quantityInStock' label='Quantity in Stock' />
+                        <AppTextInput type='number' control={control} name='quantityStock' label='Quantity in Stock' />
                     </Grid>
                     <Grid item xs={12}>
                         <AppTextInput control={control} multiline={true} rows={4} name='description' label='Description' />
                     </Grid>
                     <Grid item xs={12}>
                         <Box display='flex' justifyContent='space-between' alignItems='center'>
-                        <AppTextInput control={control} name='pictureurl' label='pictureurl' />
+                        <AppTextInput control={control} name='pictureUrl' label='Url of Picture' />
                         </Box>
-
+                                
                     </Grid>
                 </Grid>
                 <Box display='flex' justifyContent='space-between' sx={{ mt: 3 }}>
                     <Button onClick={cancelEdit} variant='contained' color='inherit'>Cancel</Button>
-                    <LoadingButton loading={isSubmitting} type='submit' variant='contained' color='success'>Submit</LoadingButton>
+                    <LoadingButton  loading={isSubmitting} type='submit' variant='contained' color='success'>Submit</LoadingButton>
                 </Box>
             </form>
+            <img src={product?.pictureUrl} alt={product?.name} style={{ maxHeight: 200 }} />
         </Box>
     )
 }

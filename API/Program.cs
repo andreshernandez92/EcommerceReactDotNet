@@ -72,6 +72,8 @@ builder.Services.AddAuthorization();
 builder.Services.AddScoped<Tokenservice>();
 builder.Services.AddScoped<PaymentService>();
 var app = builder.Build();
+app.UseDefaultFiles();
+app.UseStaticFiles();
 using var scope = app.Services.CreateScope();
 var context = scope.ServiceProvider.GetRequiredService<StoreContext>();
 var userManager= scope.ServiceProvider.GetRequiredService<UserManager<User>>();
@@ -87,6 +89,7 @@ catch(Exception ex){
 finally{
     scope.Dispose();
 }
+
 app.UseMiddleware<ExceptionMiddleware>();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -95,6 +98,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 //app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors(opt => {

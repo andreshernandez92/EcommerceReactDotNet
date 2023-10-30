@@ -1,5 +1,6 @@
 import { Card, CardContent, Typography } from "@mui/material";
 import { useAppSelector } from "../../app/store/configStore";
+import { currencyFormat } from "../../app/utils/util";
 
 interface Props {
   subtotal?: number;
@@ -16,13 +17,13 @@ export default function BasketSummary({ subtotal }: Props) {
       <Card variant="outlined">
         <CardContent>
           <Typography variant="h6" component="div">
-            Subtotal: ${subtotal.toFixed(2)}
+            Subtotal: {currencyFormat(subtotal)}
           </Typography>
           <Typography variant="h6" component="div">
-            Delivery fee*: ${deliveryFee.toFixed(2)}
+            Delivery fee*: {currencyFormat(deliveryFee)}
           </Typography>
           <Typography variant="h6" component="div">
-            Total: ${(subtotal + deliveryFee).toFixed(2)}
+            Total: {currencyFormat(subtotal + deliveryFee)}
           </Typography>
           <Typography color="text.secondary" style={{ fontStyle: "italic" }}>
             *Orders over $100 qualify for free delivery

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Product } from "../../app/models/product";
 import { useAppDispatch, useAppSelector } from "../../app/store/configStore";
 import { addBasketItemAsync } from "../basket/basketSlice";
+import { currencyFormat } from "../../app/utils/util";
 
 
 interface Props {
@@ -30,7 +31,7 @@ return(
       {(product.name)}
         </Typography> 
         <Typography sx={{ marginBottom: 2 }}>
-          ${(product.price).toFixed(2)}
+        {currencyFormat(product.price)}
         </Typography>
         <Typography variant="body2">
         {product.brand} /   {product.type}
