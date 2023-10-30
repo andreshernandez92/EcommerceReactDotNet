@@ -13,6 +13,7 @@ import ServerError from "../errors/ServerError";
 import App from "../layout/App";
 import RequireAuth from "./RequireAuth";
 import Inventory from "../../features/admin/Inventory";
+import PaymentPage from "../../features/admin/Payments";
 
 
 export const router = createBrowserRouter([
@@ -24,7 +25,8 @@ export const router = createBrowserRouter([
             {element: <RequireAuth />, children: [
                 {path: 'checkout', element: <CheckoutWrapper />},
                 {path: 'orders', element: <Orders />},
-                {path: 'inventory', element: <Inventory />}
+                {path: 'inventory', element: <Inventory />},
+                {path: 'payments', element: <PaymentPage/>},
             ]},
            
             {path: 'catalog', element: <Catalog />},

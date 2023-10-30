@@ -71,7 +71,7 @@ const ContactPage = () => {
           fullWidth
           size="large"
           onClick={() => {
-            setSnackbarMessage('Your message has been sent!');
+            setSnackbarMessage('The email service has not been implemented but can be!');
             setSnackbarOpen(true);
             // You can also perform other actions (e.g., sending the message) here
           }}

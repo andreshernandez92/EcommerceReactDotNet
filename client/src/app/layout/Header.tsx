@@ -95,6 +95,13 @@ const open = Boolean(anchorEl1);
             <Typography sx={{ ...navStyles}}>INVENTORY</Typography>  
             </ListItem>
              }
+            {user &&
+            <ListItem component={NavLink}
+            to={'/payments'}
+            >
+            <Typography sx={{ ...navStyles}}>PAYMENTS</Typography>  
+            </ListItem>
+             }
         </List>
       </Box>
     );
@@ -141,6 +148,14 @@ const open = Boolean(anchorEl1);
   
               </ListItem>
                }
+               {user &&
+              <ListItem component={NavLink}
+              to={'/payments'}
+              sx={{...navStyles,color: 'inherit', typography:'h6'}}>
+               PAYMENTS
+  
+              </ListItem>
+               }
         </List>
          
          
@@ -163,7 +178,7 @@ const open = Boolean(anchorEl1);
                 component={NavLink}
                 to={path}
                 key={path}
-                sx={{...navStyles  }}
+                sx={{ml: 2,...navStyles  }}
                 >
                     {title.toUpperCase()}
                 </Typography>
@@ -185,10 +200,10 @@ const open = Boolean(anchorEl1);
         TransitionComponent={Fade}
       >
         {rightLinks.map(({title,path})=> (
-        <Typography onClick={handleClose}  component={NavLink}
+        <MenuItem onClick={handleClose}  component={NavLink}
         to={path}
         key={path}
-        sx={{...navStyles}}>{title.toUpperCase()}</Typography>))}
+        sx={{...navStyles}}>{title.toUpperCase()}</MenuItem>))}
         </Menu>
 
 

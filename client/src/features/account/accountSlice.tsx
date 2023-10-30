@@ -81,7 +81,7 @@ export const accountSlice = createSlice({
             state.user = {...action.payload, roles: typeof(roles) === 'string' ? [roles] : roles};  
         });
         builder.addMatcher(isAnyOf(signInUser.rejected),(state,action)=>{
-            console.log(action.payload)
+            throw action.payload;
         });
 
       })

@@ -8,6 +8,7 @@ using API.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Stripe;
 
 namespace API.Controllers
@@ -73,6 +74,46 @@ namespace API.Controllers
 
             return new EmptyResult();
         }
+
+        [Authorize(Roles= "Admin")]
+        [HttpGet]
+         public async Task<IActionResult> GetPayments()
+    {
+        try
+        {
+            StripeConfiguration.ApiKey = _config["StripeSettings:SecretKey"];
+            var options = new PaymentIntentListOptions
+            {
+                Limit = 10, // You can set the limit as per your requirements
+            };
+
+            var service = new PaymentIntentService();
+            var paymentIntents = await service.ListAsync(options);
+            var payments = new List<PaymentInfo>();
+
+        foreach (var paymentIntent in paymentIntents)
+        {
+            
+                payments.Add(new PaymentInfo
+                {
+                    Id = paymentIntent.Id,
+                    Amount = paymentIntent.Amount,
+                    Created = paymentIntent.Created,
+                    ClientSecret = paymentIntent.ClientSecret,
+                    Currency = paymentIntent.Currency,
+                    PaymentMethodType = paymentIntent.PaymentMethodTypes.FirstOrDefault()
+                });
+        
+        }
+
+        return Ok(payments);
+    
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
 
     }
 

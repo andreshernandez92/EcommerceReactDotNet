@@ -3,13 +3,8 @@ import { Container, Grid, Typography, Paper } from '@mui/material';
 const AboutPage = () => {
   return (
     <Container maxWidth="lg"   sx={{
-
-  
-      // Margin
-      mx: 2, // Horizontal margin
-      my: 3, // Vertical margin
-  
-
+      mx: 2,
+      my: 3,
     }}>
       <Grid container spacing={3}>
         <Grid item xs={12}>

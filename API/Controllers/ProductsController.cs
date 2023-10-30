@@ -64,7 +64,7 @@ namespace API.Controllers
             
             var product = _mapper.Map<Product>(productDto);
             _context.Products.Add(product);
-            Console.WriteLine(product);
+           
             var result = await _context.SaveChangesAsync() > 0;
             if (result) return CreatedAtRoute("GetProduct", new {Id = product.Id}, product);
         return BadRequest(new ProblemDetails {Title = "Problem creating a new product"});
