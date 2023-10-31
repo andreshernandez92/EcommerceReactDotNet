@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import { PaginatedResponse } from '../models/pagination';
 import { store } from '../store/configStore';
 import { router } from '../router/Routes';
+import { request } from 'http';
 axios.defaults.baseURL = 'http://localhost:5277/api/'
 axios.defaults.withCredentials =true;
 const responseBody = (response: AxiosResponse) => response.data ;
@@ -101,12 +102,11 @@ const Basket = {
     get: () => requests.get('basket'),
     addItem: (productId: number, quantity = 1) => requests.post(`basket?productId=${productId}&quantity=${quantity}`,{}),
     removeItem: (productId: number, quantity = 1) => requests.delete(`basket?productId=${productId}&quantity=${quantity}`),
-
-
 }
 
 const Payments = {
-    createPaymentIntent: () => requests.post('payment', {})
+    createPaymentIntent: () => requests.post('payment', {}),
+    getPayments: () => requests.get('payment')
 }
 
 const Orders = {
