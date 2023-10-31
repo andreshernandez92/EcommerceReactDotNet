@@ -4,6 +4,7 @@ import { Card, CardContent, Typography, Box } from "@mui/material";
 import { BasketItem } from "../../app/models/basket";
 import { useAppSelector, useAppDispatch } from "../../app/store/configStore";
 import { removeBasketItemAsync, addBasketItemAsync } from "./basketSlice";
+import { currencyFormat } from "../../app/utils/util";
 
 interface Props {
   items: BasketItem[];
@@ -23,7 +24,7 @@ export default function BasketTable({ items, isBasket = true }: Props) {
               <img src={item.pictureUrl} alt={item.name} style={{ height: 50, marginRight: 20 }} />
               <Typography variant="body1">{item.name}</Typography>
             </Box>
-            <Typography variant="body1">Price: ${item.price.toFixed(2)}</Typography>
+            <Typography variant="body1">Price: ${currencyFormat(item.price)}</Typography>
             <Box display="flex" alignItems="center">
               {isBasket && (
                 <LoadingButton

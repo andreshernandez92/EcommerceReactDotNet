@@ -2,21 +2,20 @@ import { Container, Card, CardContent, Typography, Grid } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '../../app/store/configStore';
 import { getPaymentAsync, setPaymentData } from './paymentslice';
 import { useEffect } from 'react';
+import { currencyFormat } from '../../app/utils/util';
 
 
 export default function PaymentPage()  {
-  const { paymentData } = useAppSelector((state) => state.payments);
+  const { payments } = useAppSelector((state) => state.payments);
   const dispatch = useAppDispatch();
   
   useEffect(() => { 
-    if(!paymentData){ 
-      dispatch(getPaymentAsync()).then((response) => {
-        dispatch(setPaymentData(response));
-        
-      });
+    if(!payments){ 
+      dispatch(getPaymentAsync())
+    console.log(payments)
     }
-  }, []);
-if (!paymentData) return <Typography variant="h3">You have no recent payments</Typography>;
+  }, [payments]);
+if (!payments) return <Typography variant="h3">You have no recent payments</Typography>;
 
 
     return (
@@ -32,7 +31,7 @@ if (!paymentData) return <Typography variant="h3">You have no recent payments</T
     },my: 2 }}  > RECENT PAYMENTS</Typography>
     
     <Grid container spacing={2}>
-  {paymentData && paymentData.items && paymentData.items.map((payment, index) => (
+  {payments && payments.map((payment) => (
     <Grid item xs={12} key={payment.id}>
       <Card variant="outlined">
         <CardContent>
@@ -40,10 +39,10 @@ if (!paymentData) return <Typography variant="h3">You have no recent payments</T
             Payment ID: {payment.id}
           </Typography>
           <Typography color="textSecondary">
-            Amount: {payment.amount} {payment.currency}
+            Amount: {currencyFormat(payment.amount)} {payment.currency}
           </Typography>
           <Typography color="textSecondary">
-            Created: {new Date(payment.created).getDate()}
+            Created: {new Date(payment.created).toLocaleDateString()}
           </Typography>
           <Typography color="textSecondary">
             Client Secret: {payment.clientSecret}

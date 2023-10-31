@@ -4,20 +4,21 @@ import agent from "../../app/api/agent";
 import { RootState } from "../../app/store/configStore";
 import { Payments } from "../../app/models/payments";
 interface PaymentState {
-    paymentData: Payments | null,
+    payments: Payments[] | null,
     status: string
 }
 
 const initialState: PaymentState = {
-  paymentData: null,
+  payments: null,
   status: 'idle'
 };
 
-export const getPaymentAsync = createAsyncThunk<Payments>(
+export const getPaymentAsync = createAsyncThunk<Payments[]>(
   "payment/getpayments",
   async (_,thunkAPI) => {
     try {
       const response = await agent.Payments.getPayments();
+      console.log(response.data)
       return response;
     } catch (error:any) {
       return thunkAPI.rejectWithValue({ error: error.message });
@@ -26,22 +27,22 @@ export const getPaymentAsync = createAsyncThunk<Payments>(
 );
 
 export const paymentSlice = createSlice({
-  name: "payment",
+  name: "payments",
   initialState,
   reducers: {
     setPaymentData: (state,action) => {
       
-      state.paymentData = action.payload
-      console.log(state.paymentData)
+      state.payments = action.payload
+      
      
   },
   clearPaymentData: (state) => {
-      state.paymentData= null;
+      state.payments= null;
   } 
   },
   extraReducers: (builder) => {
     builder.addCase(getPaymentAsync.fulfilled, (state, action) => {
-      state.paymentData = action.payload;
+      state.payments = action.payload;
     });
     builder.addCase(getPaymentAsync.pending, (state, action) => {
       state.status = 'Acquiring Payments';
