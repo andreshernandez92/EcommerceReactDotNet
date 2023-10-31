@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import ProductHero from "./ProductHero";
 import ProductValues from "./ProductValues";
 import ProductSmokingHero from "./ProductSmokinghero";

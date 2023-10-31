@@ -1,6 +1,5 @@
 import { LoadingButton } from "@mui/lab";
-import {  Avatar, Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
-import CardHeader from "@mui/material/CardHeader/CardHeader";
+import {  Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Product } from "../../app/models/product";
 import { useAppDispatch, useAppSelector } from "../../app/store/configStore";

@@ -3,8 +3,7 @@ import { toast } from "react-toastify";
 import { PaginatedResponse } from '../models/pagination';
 import { store } from '../store/configStore';
 import { router } from '../router/Routes';
-import { request } from 'http';
-axios.defaults.baseURL = 'http://localhost:5277/api/'
+axios.defaults.baseURL = process.env.REACT_APP_API_URL
 axios.defaults.withCredentials =true;
 const responseBody = (response: AxiosResponse) => response.data ;
 type MyErrorResponse = {
@@ -15,13 +14,14 @@ type MyErrorResponse = {
 const sleep = () => new Promise(resolve => setTimeout(resolve, 500))
 
 axios.interceptors.request.use(config=> {
+
     const token = store.getState().account.user?.token;
     if(token) config.headers.Authorization = `Bearer ${token}` 
     return config;
 })
 
 axios.interceptors.response.use( async response => {
-    await sleep();
+    if(process.env.NODE_ENV==='development') await sleep();
     const pagination = response.headers['pagination'];
     if(pagination){
         response.data = new PaginatedResponse(response.data,JSON.parse(pagination));
@@ -29,7 +29,7 @@ axios.interceptors.response.use( async response => {
     }
     return response
 }, (error: AxiosError<MyErrorResponse>)=> {
-    const {data, status, statusText} = error.response!;
+    const {data, status} = error.response!;
     switch(status){
         case 400:
             if(data.errors) {

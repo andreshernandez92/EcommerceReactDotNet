@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../app/store/configStore";
 import { setPageNumber, setProductParams } from "./catalogSlice";
 import AppPagination from "../../app/components/AppPagination";
 import useProducts from "../../app/hooks/useProducts";
-import { Box ,FormControl,Grid, InputLabel, MenuItem, Paper, Select, SelectChangeEvent  } from "@mui/material";
+import { Box ,FormControl,Grid, InputLabel, MenuItem, Select  } from "@mui/material";
 
 
 const sortOptions = [

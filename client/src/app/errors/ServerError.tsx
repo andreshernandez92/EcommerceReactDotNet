@@ -1,4 +1,4 @@
-import { Button, Container, Divider, Grid, Paper, Typography } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 
 export default function ServerError() {

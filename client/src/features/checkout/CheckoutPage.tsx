@@ -62,7 +62,7 @@ export default function CheckoutPage() {
     useEffect(() => {
         agent.Account.fetchAddress()
             .then(response => {
-                console.log("response " + response)
+               
                 if (response) {
                     methods.reset({ ...methods.getValues(), ...response, saveAddress: false })
                 }

@@ -1,6 +1,6 @@
 import { Container, Card, CardContent, Typography, Grid } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '../../app/store/configStore';
-import { getPaymentAsync, setPaymentData } from './paymentslice';
+import { getPaymentAsync } from './paymentslice';
 import { useEffect } from 'react';
 import { currencyFormat } from '../../app/utils/util';
 
@@ -12,7 +12,7 @@ export default function PaymentPage()  {
   useEffect(() => { 
     if(!payments){ 
       dispatch(getPaymentAsync())
-    console.log(payments)
+    
     }
   }, [payments]);
 if (!payments) return <Typography variant="h3">You have no recent payments</Typography>;
