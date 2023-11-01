@@ -5,6 +5,7 @@ using API.Middleware;
 using API.RequestHelpers;
 using API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -107,4 +108,5 @@ opt.AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithOrigins("http://loc
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+app.MapFallbackToController("Index", "Fallback");
 app.Run();

@@ -1,0 +1,165 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\asset-manifest.json",
+      "PackagePath": "staticwebassets\\asset-manifest.json"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\logo192.png",
+      "PackagePath": "staticwebassets\\logo192.png"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\logo512.png",
+      "PackagePath": "staticwebassets\\logo512.png"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\manifest.json",
+      "PackagePath": "staticwebassets\\manifest.json"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\robots.txt",
+      "PackagePath": "staticwebassets\\robots.txt"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\css\\main.a6209875.css",
+      "PackagePath": "staticwebassets\\static\\css\\main.a6209875.css"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\css\\main.a6209875.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\main.a6209875.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\js\\787.c4e7f8f9.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\787.c4e7f8f9.chunk.js"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\js\\787.c4e7f8f9.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\787.c4e7f8f9.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\js\\main.8b27981b.js",
+      "PackagePath": "staticwebassets\\static\\js\\main.8b27981b.js"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\js\\main.8b27981b.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\static\\js\\main.8b27981b.js.LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\js\\main.8b27981b.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\main.8b27981b.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\open-sans-cyrillic-400-normal.5a546777799f438b6bb4.woff2",
+      "PackagePath": "staticwebassets\\static\\media\\open-sans-cyrillic-400-normal.5a546777799f438b6bb4.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\open-sans-cyrillic-400-normal.a38f3cba9030a884064f.woff",
+      "PackagePath": "staticwebassets\\static\\media\\open-sans-cyrillic-400-normal.a38f3cba9030a884064f.woff"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\open-sans-cyrillic-ext-400-normal.01b11c560bc52c756c23.woff2",
+      "PackagePath": "staticwebassets\\static\\media\\open-sans-cyrillic-ext-400-normal.01b11c560bc52c756c23.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\open-sans-cyrillic-ext-400-normal.a49ade1fc27bb36540f5.woff",
+      "PackagePath": "staticwebassets\\static\\media\\open-sans-cyrillic-ext-400-normal.a49ade1fc27bb36540f5.woff"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\open-sans-greek-400-normal.3064bf7e87155fcb14a1.woff2",
+      "PackagePath": "staticwebassets\\static\\media\\open-sans-greek-400-normal.3064bf7e87155fcb14a1.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\open-sans-greek-400-normal.e0966a3e81464e0a5071.woff",
+      "PackagePath": "staticwebassets\\static\\media\\open-sans-greek-400-normal.e0966a3e81464e0a5071.woff"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\open-sans-greek-ext-400-normal.1ed998a42083750e175e.woff2",
+      "PackagePath": "staticwebassets\\static\\media\\open-sans-greek-ext-400-normal.1ed998a42083750e175e.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\open-sans-greek-ext-400-normal.da076625b5afad4ce426.woff",
+      "PackagePath": "staticwebassets\\static\\media\\open-sans-greek-ext-400-normal.da076625b5afad4ce426.woff"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\open-sans-hebrew-400-normal.bfb50b6101b03748be6a.woff",
+      "PackagePath": "staticwebassets\\static\\media\\open-sans-hebrew-400-normal.bfb50b6101b03748be6a.woff"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\open-sans-hebrew-400-normal.daafcec89c2332b84c25.woff2",
+      "PackagePath": "staticwebassets\\static\\media\\open-sans-hebrew-400-normal.daafcec89c2332b84c25.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\open-sans-latin-400-normal.881f0b342b6cc438a69c.woff",
+      "PackagePath": "staticwebassets\\static\\media\\open-sans-latin-400-normal.881f0b342b6cc438a69c.woff"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\open-sans-latin-400-normal.a1535f451fb7bb98f526.woff2",
+      "PackagePath": "staticwebassets\\static\\media\\open-sans-latin-400-normal.a1535f451fb7bb98f526.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\open-sans-latin-ext-400-normal.016b9986529d60565198.woff",
+      "PackagePath": "staticwebassets\\static\\media\\open-sans-latin-ext-400-normal.016b9986529d60565198.woff"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\open-sans-latin-ext-400-normal.ccfa20f8de7f73249c39.woff2",
+      "PackagePath": "staticwebassets\\static\\media\\open-sans-latin-ext-400-normal.ccfa20f8de7f73249c39.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\open-sans-vietnamese-400-normal.473f6b09ca8f5658857e.woff2",
+      "PackagePath": "staticwebassets\\static\\media\\open-sans-vietnamese-400-normal.473f6b09ca8f5658857e.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\open-sans-vietnamese-400-normal.98f9f3e4dd6dedb2b035.woff",
+      "PackagePath": "staticwebassets\\static\\media\\open-sans-vietnamese-400-normal.98f9f3e4dd6dedb2b035.woff"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\poppins-devanagari-400-normal.0e11b62db931f85340d4.woff",
+      "PackagePath": "staticwebassets\\static\\media\\poppins-devanagari-400-normal.0e11b62db931f85340d4.woff"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\poppins-devanagari-400-normal.64d5f06ee726edd58ca3.woff2",
+      "PackagePath": "staticwebassets\\static\\media\\poppins-devanagari-400-normal.64d5f06ee726edd58ca3.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\poppins-latin-400-normal.405055dd680fa1dcdfa2.woff2",
+      "PackagePath": "staticwebassets\\static\\media\\poppins-latin-400-normal.405055dd680fa1dcdfa2.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\poppins-latin-400-normal.cda9c93f49237f11c766.woff",
+      "PackagePath": "staticwebassets\\static\\media\\poppins-latin-400-normal.cda9c93f49237f11c766.woff"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2",
+      "PackagePath": "staticwebassets\\static\\media\\poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Yeyian PC\\Documents\\Portfolio projects\\EcommerceReactDotNet\\api\\wwwroot\\static\\media\\poppins-latin-ext-400-normal.8cc52669c8e8a6735699.woff",
+      "PackagePath": "staticwebassets\\static\\media\\poppins-latin-ext-400-normal.8cc52669c8e8a6735699.woff"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.API.props",
+      "PackagePath": "build\\API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.API.props",
+      "PackagePath": "buildMultiTargeting\\API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.API.props",
+      "PackagePath": "buildTransitive\\API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

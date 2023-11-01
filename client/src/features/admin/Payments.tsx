@@ -4,7 +4,6 @@ import { getPaymentAsync } from './paymentslice';
 import { useEffect } from 'react';
 import { currencyFormat } from '../../app/utils/util';
 
-
 export default function PaymentPage()  {
   const { payments } = useAppSelector((state) => state.payments);
   const dispatch = useAppDispatch();
