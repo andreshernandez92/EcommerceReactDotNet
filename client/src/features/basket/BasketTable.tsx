@@ -24,7 +24,7 @@ export default function BasketTable({ items, isBasket = true }: Props) {
               <img src={item.pictureUrl} alt={item.name} style={{ height: 50, marginRight: 20 }} />
               <Typography variant="body1">{item.name}</Typography>
             </Box>
-            <Typography variant="body1">Price: ${currencyFormat(item.price)}</Typography>
+            <Typography variant="body1">Price: {currencyFormat(item.price)}</Typography>
             <Box display="flex" alignItems="center">
               {isBasket && (
                 <LoadingButton
@@ -54,7 +54,7 @@ export default function BasketTable({ items, isBasket = true }: Props) {
                 </LoadingButton>
               )}
             </Box>
-            <Typography variant="body1">Subtotal: ${(item.price * item.quantity).toFixed(2)}</Typography>
+            <Typography variant="body1">Subtotal: {currencyFormat((item.price * item.quantity))}</Typography>
             {isBasket && (
               <LoadingButton
                 loading={status === "pendingRemoveItem" + item.productId + "del"}

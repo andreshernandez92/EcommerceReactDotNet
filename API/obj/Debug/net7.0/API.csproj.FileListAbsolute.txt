@@ -391,3 +391,6 @@ C:\Users\andre\Documents\Prototype\EcommerceReactDotNet\API\obj\Debug\net7.0\API
 C:\Users\andre\Documents\Prototype\EcommerceReactDotNet\API\obj\Debug\net7.0\API.genruntimeconfig.cache
 C:\Users\andre\Documents\Prototype\EcommerceReactDotNet\API\obj\Debug\net7.0\ref\API.dll
 C:\Users\Yeyian PC\Documents\Portfolio projects\EcommerceReactDotNet\api\bin\Debug\net7.0\API.staticwebassets.runtime.json
+C:\Users\andre\Documents\Prototype\EcommerceReactDotNet\API\bin\Debug\net7.0\API.staticwebassets.runtime.json
+C:\Users\andre\Documents\Prototype\EcommerceReactDotNet\API\bin\Debug\net7.0\Npgsql.dll
+C:\Users\andre\Documents\Prototype\EcommerceReactDotNet\API\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
