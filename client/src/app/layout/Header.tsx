@@ -53,6 +53,7 @@ const handleClose = () => {
 const open = Boolean(anchorEl1);
     const handleDrawerToggle = () => {
       setMobileOpen((prevState) => !prevState);
+
     };
     const container = window !== undefined ? () => window().document.body : undefined;
   
@@ -88,19 +89,20 @@ const open = Boolean(anchorEl1);
             </ListItem>
           ))}
                  
-          {user &&
+          {user?.roles?.[1]=='Admin' &&
+          <>
             <ListItem component={NavLink}
             to={'/inventory'}
             >
             <Typography sx={{ ...navStyles}}>INVENTORY</Typography>  
             </ListItem>
-             }
-            {user &&
+            
             <ListItem component={NavLink}
             to={'/payments'}
             >
             <Typography sx={{ ...navStyles}}>PAYMENTS</Typography>  
             </ListItem>
+            </>
              }
         </List>
       </Box>
@@ -112,7 +114,8 @@ const open = Boolean(anchorEl1);
       <Box  display='flex' alignItems='center' sx={{ display: 'flex' }}>
         <AppBar component="nav" position='static' sx={{mb: 0}}>
           <Toolbar>
-            <IconButton
+      
+          <IconButton
               color="inherit"
               aria-label="open drawer"
               edge="start"
@@ -140,22 +143,23 @@ const open = Boolean(anchorEl1);
                 >
                     {title.toUpperCase()}
                 </ListItem>
-            ))} {user &&
-              <ListItem component={NavLink}
+            ))} {user?.roles?.[1]=='Admin' &&
+            <>  
+            <ListItem component={NavLink}
               to={'/inventory'}
               sx={{...navStyles,color: 'inherit', typography:'h6'}}>
                INVENTORY
   
               </ListItem>
-               }
-               {user &&
+              
               <ListItem component={NavLink}
               to={'/payments'}
               sx={{...navStyles,color: 'inherit', typography:'h6'}}>
                PAYMENTS
   
               </ListItem>
-               }
+              </>  
+            }
         </List>
          
          

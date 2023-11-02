@@ -90,10 +90,10 @@ namespace API.Controllers
             var service = new PaymentIntentService();
             var paymentIntents = await service.ListAsync(options);
             var payments = new List<PaymentInfo>();
-
+     
+     
         foreach (var paymentIntent in paymentIntents)
         {
-            
                 payments.Add(new PaymentInfo
                 {
                     Id = paymentIntent.Id,

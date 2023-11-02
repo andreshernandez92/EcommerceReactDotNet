@@ -105,10 +105,7 @@ public async Task<ActionResult> Register(RegisterDto registerDto){
                 return null;            
                 }
 
-            Console.WriteLine(await Task.FromResult(_context.Baskets
-            .Include(i => i.Items)
-            .ThenInclude(p=> p.Product)
-            .FirstOrDefault(x => x.BuyerId == buyerId)));
+            
             return await Task.FromResult(_context.Baskets
             .Include(i => i.Items)
             .ThenInclude(p=> p.Product)
