@@ -1,5 +1,11 @@
 # EcommerceReactDotNet
-
+<img
+                    src="https://github.com/andreshernandez92/andreshernandez92.github.io/blob/main/assets/Portfolio1.gif?raw=true"
+                    class="img-fluid"
+                    alt="Project Image"
+                    width="600"
+                    height="400"
+                  />
 ## Introduction
 
  A robust and modern app built portfolio project using .NET and React! 
