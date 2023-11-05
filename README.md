@@ -8,7 +8,7 @@
                   />
 ## Introduction
 
- A robust and modern app built portfolio project using .NET and Javascript with Typescript and React! 
+ A robust and modern app built portfolio project using .NET, Javascript with Typescript and React! 
 This project is designed to provide a basic shopping experience for users, featuring an intuitive and responsive user interface, 
 efficient back-end architecture, and basic e-commerce functionalities.
 
